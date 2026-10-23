@@ -1,0 +1,196 @@
+:root {
+    --negro: #121212;
+    --blanco: #FFFFFF;
+    --rojo: #FF0022;
+    --amarillo: #FFD000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background: var(--negro);
+    color: var(--blanco);
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.7;
+}
+
+.contenedor {
+    width: 88%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.numero {
+    color: var(--blanco);
+}
+
+.indice {
+    color: var(--rojo);
+}
+
+h1, h2, h3 {
+    color: var(--blanco);
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.portada {
+    padding: 80px 0 40px;
+}
+
+.numero {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+h1 {
+    font-size: clamp(45px, 10vw, 110px);
+    overflow-wrap: anywhere;
+}
+
+h1 span {
+    color: var(--rojo);
+}
+
+.subtitulo {
+    color: var(--amarillo);
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(18px, 3vw, 28px);
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.introduccion {
+    max-width: 700px;
+    margin-top: 25px;
+    color: var(--blanco);
+    font-size: 14px;
+}
+
+figure {
+    margin: 20px 0 80px;
+}
+
+figure img {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    display: block;
+}
+
+figcaption {
+    color: var(--blanco);
+    font-size: 11px;
+    margin-top: 10px;
+}
+
+.seccion {
+    padding: 40px;
+}
+
+.encabezado {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.indice {
+    font-size: 34px;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: clamp(25px, 5vw, 48px);
+}
+
+.texto {
+    width: calc(100% - 65px);
+    margin-left: 65px;
+    color: var(--blanco);
+    font-size: 14px;
+}
+
+.texto p + p {
+    margin-top: 18px;
+}
+
+.destacado {
+    color: var(--amarillo);
+}
+
+.diagrama {
+    margin: 30px 0 0 65px;
+    padding: 0px;
+}
+
+.nodo {
+    width: 75%;
+    margin: auto;
+    padding: 15px;
+    background: var(--amarillo);
+    color: var(--negro);
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.flecha {
+    text-align: center;
+    color: var(--amarillo);
+    font-size: 24px;
+}
+
+.nota {
+    width: 75%;
+    margin: auto;
+    color: var(--blanco);
+    font-size: 11px;
+    margin-top: 10px;
+}
+
+.referencias {
+    padding: 35px;
+    border-top: 2px solid var(--blanco);
+}
+
+.referencias h2 {
+    font-size: 25px;
+}
+
+.referencias p {
+    margin-top: 12px;
+    color: var(--blanco);
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+a {
+    color: var(--amarillo);
+}
+
+@media (max-width: 600px) {
+    .portada {
+        padding-top: 50px;
+    }
+
+    .encabezado {
+        grid-template-columns: 30px 1fr;
+        gap: 10px;
+    }
+
+    .texto, .diagrama {
+        width: calc(100% - 40px);
+    }
+
+    .diagrama {
+        padding: 12px;
+    }
+}
