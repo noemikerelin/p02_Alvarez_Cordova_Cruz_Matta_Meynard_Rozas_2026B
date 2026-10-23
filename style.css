@@ -1,3 +1,7 @@
+/* =========================
+   1. COLORES Y CONFIGURACIÓN
+========================= */
+
 :root {
     --negro: #121212;
     --blanco: #FFFFFF;
@@ -18,17 +22,9 @@ body {
 }
 
 .contenedor {
-    width: 88%;
-    max-width: 1100px;
-    margin: auto;
-}
-
-.numero {
-    color: var(--blanco);
-}
-
-.indice {
-    color: var(--rojo);
+    width: 100;
+    max-width: none;
+    margin: 0;
 }
 
 h1, h2, h3 {
@@ -39,19 +35,31 @@ h1, h2, h3 {
     line-height: 1.1;
 }
 
+
+/* =========================
+   2. PORTADA CENTRADA
+========================= */
+
 .portada {
-    padding: 80px 0 40px;
+    background: var(--negro);
+    text-align: center;
+    padding: 80px 40px 60px;
 }
 
 .numero {
+    max-width: 800px;
+    margin: 0 auto 25px;
+    color: var(--blanco);
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 800;
+    line-height: 1.8;
 }
 
 h1 {
-    font-size: clamp(45px, 10vw, 110px);
+    font-size: clamp(45px, 8vw, 100px);
+    text-align: center;
     overflow-wrap: anywhere;
 }
 
@@ -60,22 +68,30 @@ h1 span {
 }
 
 .subtitulo {
-    color: var(--amarillo);
+    margin-top: 18px;
+    color: var(--blanco);
     font-family: 'Archivo Black', sans-serif;
     font-size: clamp(18px, 3vw, 28px);
     font-weight: 800;
     letter-spacing: 4px;
+    text-align: center;
 }
 
 .introduccion {
-    max-width: 700px;
-    margin-top: 25px;
+    max-width: 650px;
+    margin: 25px auto 0;
     color: var(--blanco);
     font-size: 14px;
+    text-align: center;
 }
 
+
+/* =========================
+   3. IMAGEN PRINCIPAL
+========================= */
+
 figure {
-    margin: 20px 0 80px;
+    margin: 20px 0 40px;
 }
 
 figure img {
@@ -88,32 +104,134 @@ figure img {
 figcaption {
     color: var(--blanco);
     font-size: 11px;
-    margin-top: 10px;
+    margin: 10px 8% 0;
 }
+
+
+/* =========================
+   4. SECCIONES Y DIFUMINADO
+========================= */
 
 .seccion {
-    padding: 40px;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 50px;
+
+    width: 100%;
+    padding: 75px 8%;
+
+    background: var(--negro);
 }
 
+/* Luz roja difuminada */
+
+.seccion::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: -40px;
+
+    background: radial-gradient(
+        ellipse at 20% 50%,
+        rgba(255, 0, 34, 0.75) 0%,
+        rgba(255, 0, 34, 0.35) 35%,
+        rgba(255, 0, 34, 0.10) 55%,
+        transparent 75%
+    );
+
+    filter: blur(35px);
+    pointer-events: none;
+}
+
+/* Alternar el lado del color */
+
+.seccion:nth-of-type(odd)::before {
+    background: radial-gradient(
+        ellipse at 80% 50%,
+        rgba(255, 0, 34, 0.75) 0%,
+        rgba(255, 0, 34, 0.35) 35%,
+        rgba(255, 0, 34, 0.10) 55%,
+        transparent 75%
+    );
+}
+
+
+/* =========================
+   5. TÍTULOS Y NÚMEROS
+========================= */
+
 .encabezado {
-    display: grid;
-    grid-template-columns: 50px 1fr;
-    gap: 15px;
-    margin-bottom: 25px;
+    display: block;
+    min-width: 0;
+    margin-bottom: 0;
 }
 
 .indice {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--amarillo);
     font-size: 34px;
     font-weight: 800;
 }
 
-h2 {
-    font-size: clamp(25px, 5vw, 48px);
+.encabezado h2 {
+    color: var(--blanco);
+    font-size: clamp(28px, 4vw, 54px);
+    line-height: 1.1;
+    overflow-wrap: break-word;
 }
 
+
+/* =========================
+   6. DISTRIBUCIÓN ALTERNADA
+========================= */
+
+/* Temas 01, 03 y 05:
+   título a la izquierda y texto a la derecha */
+
+.seccion:nth-of-type(even) .encabezado {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.seccion:nth-of-type(even) .texto {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* Temas 02 y 04:
+   texto a la izquierda y título a la derecha */
+
+.seccion:nth-of-type(odd) .encabezado {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.seccion:nth-of-type(odd) .texto {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Números y títulos sobre el fondo */
+
+.seccion h2 {
+    color: var(--blanco);
+}
+
+
+/* =========================
+   7. PÁRRAFOS
+========================= */
+
 .texto {
-    width: calc(100% - 65px);
-    margin-left: 65px;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
     color: var(--blanco);
     font-size: 14px;
 }
@@ -126,9 +244,17 @@ h2 {
     color: var(--amarillo);
 }
 
+
+/* =========================
+   8. DIAGRAMA DE OBRA
+========================= */
+
 .diagrama {
-    margin: 30px 0 0 65px;
-    padding: 0px;
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 750px;
+    margin: 30px auto 0;
+    padding: 0;
 }
 
 .nodo {
@@ -150,19 +276,25 @@ h2 {
 
 .nota {
     width: 75%;
-    margin: auto;
+    margin: 10px auto 0;
     color: var(--blanco);
     font-size: 11px;
-    margin-top: 10px;
 }
 
+
+/* =========================
+   9. REFERENCIAS
+========================= */
+
 .referencias {
-    padding: 35px;
-    border-top: 2px solid var(--blanco);
+    width: 100%;
+    padding: 45px 8%;
+    background: var(--negro);
+    border-top: none;
 }
 
 .referencias h2 {
-    font-size: 25px;
+    font-size: 28px;
 }
 
 .referencias p {
@@ -176,21 +308,86 @@ a {
     color: var(--amarillo);
 }
 
-@media (max-width: 600px) {
+
+/* =========================
+   10. DISEÑO PARA CELULARES
+========================= */
+
+@media (max-width: 650px) {
+
+    .contenedor {
+        width: 100%;
+        max-width: none;
+    }
+
     .portada {
-        padding-top: 50px;
+        padding: 55px 22px 40px;
     }
 
-    .encabezado {
-        grid-template-columns: 30px 1fr;
-        gap: 10px;
+    .numero {
+        font-size: 10px;
+        letter-spacing: 1px;
     }
 
-    .texto, .diagrama {
-        width: calc(100% - 40px);
+    h1 {
+        font-size: clamp(40px, 11vw, 65px);
+    }
+
+    .subtitulo {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    .introduccion {
+        font-size: 13px;
+    }
+
+    figure {
+        margin: 10px 0 20px;
+    }
+
+    figure img {
+        max-height: 400px;
+    }
+
+    .seccion {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+        padding: 50px 25px;
+    }
+
+    /* En móviles, todos los temas se apilan */
+
+    .seccion:nth-of-type(even) .encabezado,
+    .seccion:nth-of-type(odd) .encabezado,
+    .seccion:nth-of-type(even) .texto,
+    .seccion:nth-of-type(odd) .texto {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .encabezado h2 {
+        font-size: clamp(28px, 8vw, 42px);
+    }
+
+    .indice {
+        font-size: 28px;
+    }
+
+    .texto {
+        font-size: 14px;
     }
 
     .diagrama {
-        padding: 12px;
+        margin-top: 10px;
+    }
+
+    .nodo,
+    .nota {
+        width: 95%;
+    }
+
+    .referencias {
+        padding: 35px 25px;
     }
 }
