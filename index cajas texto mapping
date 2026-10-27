@@ -24,7 +24,7 @@
 
         #Ayuda de gemini para hacer las cajas q aparecen
         #Cambio de puntero, flecha y funcion
-        <p class="subtitulo" onclick="toggleMapping()" style="cursor: pointer;">Video Mapping ▾</p>
+        <p class="subtitulo" onclick="toggleMapping()" style="cursor: pointer;">Video Mapping</p>
      
         <div id="cajas-mapping" class="cajas-ocultas">
             <div class="caja">
