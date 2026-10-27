@@ -22,8 +22,9 @@
 
         <h1><span>Image Fulgurator</span></h1>
 
-        #Ayuda de gemini para hacer las cajas q aparecen
-        #Cambio de puntero, flecha y funcion
+        <!-- Ayuda de gemini para hacer las cajas q aparecen -->
+        <!--  Cambio de puntero, flecha y funcion -->
+
         <p class="subtitulo" onclick="toggleMapping()" style="cursor: pointer;">Video Mapping</p>
      
         <div id="cajas-mapping" class="cajas-ocultas">
@@ -138,7 +139,8 @@
 </main>
 </div>
 
-#Esta es la funcion q hace posible las cajas ocultas
+<!-- Esta es la funcion q hace posible las cajas ocultas -->
+
 <script>
     function toggleMapping() {
         document.getElementById("cajas-mapping").classList.toggle("abiertas");
