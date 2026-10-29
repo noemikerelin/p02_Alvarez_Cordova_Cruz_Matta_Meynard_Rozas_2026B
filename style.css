@@ -141,7 +141,7 @@ figure img {
 
 .cuadros-interactivos {
     width: 100%;
-    padding: 30px 8% 120px;
+    padding: 30px 8% 35px;
 
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -299,7 +299,89 @@ figure img {
     margin-top: 20px;
 }
 
-/* 6. SECCIONES Y DIFUMINADO */
+
+/* 6. GALERÍA DE IMÁGENES */
+
+.galeria {
+    width: 100%;
+    padding: 0 8% 100px;
+    background: var(--negro);
+}
+
+.galeria-contenedor {
+    width: 100%;
+    overflow: hidden;
+}
+
+.galeria-pista {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease;
+}
+
+.galeria-imagen {
+    flex: 0 0 calc((100% - 20px) / 2);
+    min-width: 0;
+    aspect-ratio: 4 / 3;
+
+    overflow: hidden;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    background: var(--negro);
+}
+
+.galeria-imagen img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Botones de navegación */
+
+.galeria-controles {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.galeria-boton {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+
+    background: var(--negro);
+    color: var(--blanco);
+
+    font-size: 20px;
+    cursor: pointer;
+
+    transition: background 0.3s ease;
+}
+
+.galeria-boton:hover {
+    background: var(--rojo);
+}
+
+.galeria-boton:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.galeria-boton:disabled:hover {
+    background: var(--negro);
+}
+
+
+/* 7. SECCIONES Y DIFUMINADO */
 
 .seccion {
     position: relative;
@@ -356,7 +438,7 @@ figure img {
 }
 
 
-/* 7. TÍTULOS Y NÚMEROS */
+/* 8. TÍTULOS Y NÚMEROS */
 
 .encabezado {
     display: block;
@@ -408,7 +490,7 @@ figure img {
 }
 
 
-/* 8. PÁRRAFOS */
+/* 9. PÁRRAFOS */
 
 .texto {
     width: 100%;
@@ -436,7 +518,7 @@ figure img {
 }
 
 
-/* 9. DIAGRAMA DE OBRA */
+/* 10. DIAGRAMA DE OBRA */
 
 .diagrama {
     grid-column: 1 / -1;
@@ -471,7 +553,7 @@ figure img {
 }
 
 
-/* 10. REFERENCIAS */
+/* 11. REFERENCIAS */
 
 .referencias {
     width: 100%;
@@ -496,7 +578,7 @@ a {
 }
 
 
-/* 11. DISEÑO PARA CELULARES */
+/* 12. DISEÑO PARA CELULARES */
 
 @media (max-width: 650px) {
 
@@ -544,7 +626,7 @@ a {
     .cuadros-interactivos {
         grid-template-columns: 1fr;
         gap: 20px;
-        padding: 20px 25px 80px;
+        padding: 20px 25px 30px;
     }
 
     .cuadro summary {
@@ -567,6 +649,29 @@ a {
 
     .cuadro-contenido p {
         font-size: 14px;
+    }
+
+    .galeria {
+        padding: 0 25px 70px;
+    }
+
+    .galeria-imagen {
+        flex: 0 0 100%;
+        aspect-ratio: 4 / 3;
+        border-radius: 15px;
+    }
+
+    .galeria-pista {
+        gap: 15px;
+    }
+
+    .galeria-controles {
+        margin-top: 20px;
+    }
+
+    .galeria-boton {
+        width: 40px;
+        height: 40px;
     }
 
     .seccion {

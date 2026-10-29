@@ -120,7 +120,55 @@
     </section>
 
 
-    <!-- 5. JULIUS VON BISMARCK -->
+    <!-- 5. GALERÍA DE IMÁGENES -->
+
+    <section class="galeria">
+
+        <div class="galeria-contenedor">
+
+            <div class="galeria-pista" id="galeriaPista">
+
+                <div class="galeria-imagen">
+                    <img src="img/imagen1.png"
+                        alt="Intervención visual con iluminación roja">
+                </div>
+
+                <div class="galeria-imagen">
+                    <img src="img/imagen2.png"
+                        alt="Retrato intervenido mediante proyección">
+                </div>
+
+                <div class="galeria-imagen">
+                    <img src="img/imagen3.png"
+                        alt="Intervención visual en un escenario">
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="galeria-controles">
+
+            <button class="galeria-boton"
+                    id="galeriaAnterior"
+                    type="button"
+                    aria-label="Ver imagen anterior">
+                &#10094;
+            </button>
+
+            <button class="galeria-boton"
+                    id="galeriaSiguiente"
+                    type="button"
+                    aria-label="Ver imagen siguiente">
+                &#10095;
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- 6. JULIUS VON BISMARCK -->
 
     <section class="seccion texto-izquierda">
 
@@ -140,7 +188,7 @@
     </section>
 
 
-    <!-- 6. IMAGE FULGURATOR -->
+    <!-- 7. IMAGE FULGURATOR -->
 
     <section class="seccion texto-derecha con-degradado">
 
@@ -164,7 +212,7 @@
     </section>
 
 
-    <!-- 7. PRINCIPIOS DE LEV MANOVICH -->
+    <!-- 8. PRINCIPIOS DE LEV MANOVICH -->
 
     <section class="seccion texto-izquierda">
 
@@ -196,7 +244,7 @@
     </section>
 
 
-    <!-- 8. DIAGRAMA DE OBRA -->
+    <!-- 9. DIAGRAMA DE OBRA -->
 
     <section class="seccion texto-derecha con-degradado degradado-derecha">
 
@@ -236,7 +284,7 @@
     </section>
 
 
-    <!-- 9. REFERENCIAS -->
+    <!-- 10. REFERENCIAS -->
 
     <section class="referencias">
 
@@ -256,5 +304,48 @@
 
 </main>
 </div>
+
+<script>
+    const galeriaPista = document.getElementById("galeriaPista");
+    const botonAnterior = document.getElementById("galeriaAnterior");
+    const botonSiguiente = document.getElementById("galeriaSiguiente");
+
+    const imagenes = galeriaPista.querySelectorAll(".galeria-imagen");
+
+    let posicionActual = 0;
+
+    function actualizarGaleria() {
+        const anchoImagen = imagenes[0].getBoundingClientRect().width;
+        const espacio = parseFloat(getComputedStyle(galeriaPista).gap);
+
+        const imagenesVisibles = window.innerWidth <= 650 ? 1 : 2;
+        const posicionMaxima = imagenes.length - imagenesVisibles;
+
+        posicionActual = Math.min(posicionActual, posicionMaxima);
+
+        const desplazamiento = posicionActual * (anchoImagen + espacio);
+
+        galeriaPista.style.transform =
+            `translateX(-${desplazamiento}px)`;
+
+        botonAnterior.disabled = posicionActual === 0;
+        botonSiguiente.disabled = posicionActual === posicionMaxima;
+    }
+
+    botonSiguiente.addEventListener("click", function () {
+        posicionActual++;
+        actualizarGaleria();
+    });
+
+    botonAnterior.addEventListener("click", function () {
+        posicionActual--;
+        actualizarGaleria();
+    });
+
+    window.addEventListener("resize", actualizarGaleria);
+
+    actualizarGaleria();
+</script>
+
 </body>
 </html>
