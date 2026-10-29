@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Encargo P02</title>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Manrope:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="contenedor">
+<main>
+
+    <section class="portada">
+        <p class="numero">
+            Grupo 01: Rosario Álvarez, Javiera Córdova,
+            Noemí Cruz, María Matta, Amélie Meynard y Pedro Rozas
+        </p>
+
+        <h1><span>Image Fulgurator</span></h1>
+
+        <!-- Ayuda de gemini para hacer las cajas q aparecen -->
+        <!--  Cambio de puntero, flecha y funcion -->
+
+        <p class="subtitulo" onclick="toggleMapping()" style="cursor: pointer;">Video Mapping</p>
+     
+        <div id="cajas-mapping" class="cajas-ocultas">
+            <div class="caja">
+                <strong>¿Qué es?:</strong> Es una técnica que utiliza proyectores de video para desplegar imágenes sobre superficies reales, mapeando virtualmente la geometría física para hacer coincidir milimétricamente la imagen digital con los relieves del espacio. Al hacerlo, transforma objetos estáticos en pantallas, alterando temporalmente la percepción espacial y creando una ilusión óptica colectiva.
+            </div>
+            <div class="caja">
+                <strong>Resignificar el entorno:</strong> Al funcionar como un puente entre lo físico y lo digital, esta técnica permite infiltrar información, parasitando espacios ajenos para resignificarlos. Mediante intervenciones lumínicas efímeras se puede subvertir las narrativas oficiales y visibilizar tensiones sociales utilizando el propio peso simbólico de los monumentos.
+            </div>
+            <div class="caja">
+                <strong>Critical media y democratización:</strong> El mapping nace del espectáculo y ha oscilado históricamente entre lo oficial y la subversión. "Racing Extinction" (2015) proyectó sobre el Empire State y la ONU especies en peligro de extinción utilizando presupuestos millonarios y permisos institucionales. En contraste a esa monumentalidad legitimada, al democratizarse el mapping, el critical media se apropia de la técnica mediante el mapping de guerrilla. Al operar sin autorización y con equipos portátiles, despoja al mapping del espectáculo visual convirtiéndolo en una herramienta democratizada, táctica y clandestina de activismo.
+            </div>
+        </div>
+
+        <p class="introduccion">
+            Una investigación sobre la imagen proyectada, la intervención
+            visual y las posibilidades de alterar aquello que registramos.
+            Este espacio reúne los antecedentes, el proyecto y su análisis.
+        </p>
+    </section>
+
+    <figure>
+        <img src="https://juliusvonbismarck.com/bank/files/gimgs/40_mao-6x6-mittel.jpg"
+             alt="Image Fulgurator de Julius von Bismarck">
+        <figcaption>Fuente: Julius von Bismarck.</figcaption>
+    </figure>
+
+    <section class="seccion">
+        <div class="encabezado">
+            <span class="indice">01</span>
+            <h2>Video Mapping</h2>
+        </div>
+
+        <div class="texto">
+            <p>
+                El video mapping permite proyectar imágenes o videos
+                sobre superficies, adaptando el contenido a sus
+                características y geometría. Así, una fachada, un objeto
+                o un espacio puede convertirse en soporte para una
+                intervención visual.
+            </p>
+
+            <p>
+                En esta investigación se explorará su relación con la
+                fotografía, la proyección y la percepción de las imágenes.
+            </p>
+        </div>
+    </section>
+    
+    <section class="seccion">
+        <div class="encabezado">
+            <span class="indice">02</span>
+            <h2>Julius von Bismarck</h2>
+        </div>
+        <div class="texto">
+            <p>Julius von Bismarck es un artista alemán que explora las relaciones entre tecnología, percepción y representación de la realidad. Sus obras investigan cómo las imágenes pueden modificar nuestra interpretación del entorno.</p>
+        </div>
+    </section>
+
+    <section class="seccion">
+        <div class="encabezado">
+            <span class="indice">03</span>
+            <h2>Image Fulgurator</h2>
+        </div>
+        <div class="texto">
+            <p>Image Fulgurator es un dispositivo desarrollado por Julius von Bismarck que interviene cuando otras personas fotografían un lugar u objeto. Mediante un sistema sincronizado con el flash de una cámara, proyecta una imagen sobre la escena fotografiada.</p>
+            <p>La intervención puede pasar inadvertida para quien observa directamente la escena, pero quedar registrada en la fotografía. La obra cuestiona así la neutralidad de las imágenes y la relación entre lo que vemos y lo que documentamos.</p>
+        </div>
+    </section>
+
+    <section class="seccion">
+        <div class="encabezado">
+            <span class="indice">04</span>
+            <h2>Principios de los nuevos medios de Lev Manovich</h2>
+        </div>
+        <div class="texto">
+            <p>Los principios de Lev Manovich permiten analizar cómo se producen, organizan y transforman los objetos de los nuevos medios.</p>
+            <p><span class="destacado">Representación numérica:</span> estudiar la relación entre la imagen y los sistemas digitales.</p>
+            <p><span class="destacado">Modularidad y automatización:</span> analizar los componentes del dispositivo y los procesos que permiten la intervención.</p>
+            <p><span class="destacado">Variabilidad y transcodificación:</span> explorar cómo una misma escena puede producir registros distintos y relacionar la lógica computacional con la experiencia visual.</p>
+        </div>
+    </section>
+
+    <section class="seccion">
+        <div class="encabezado">
+            <span class="indice">05</span>
+            <h2>Diagrama de obra</h2>
+        </div>
+        <div class="texto">
+            <p>Esquema del funcionamiento de Image Fulgurator, desde la detección del flash hasta el registro de la imagen intervenida.</p>
+        </div>
+        <div class="diagrama">
+            <div class="nodo">1. Preparación de la imagen</div>
+            <div class="flecha">↓</div>
+            <div class="nodo">2. Modificación de la cámara</div>
+            <div class="flecha">↓</div>
+            <div class="nodo">3. Integración electrónica</div>
+            <div class="flecha">↓</div>
+            <div class="nodo">4. Ensamblaje y calibración</div>
+            <div class="flecha">↓</div>
+            <div class="nodo">5. Pruebas de funcionamiento</div>
+            <p class="nota">Esquema conceptual.</p>
+        </div>
+    </section>
+
+    <section class="referencias">
+        <h2>Referencias</h2>
+        <p>Julius von Bismarck. <a href="https://juliusvonbismarck.com/">Sitio oficial</a>.</p>
+        <p>Manovich, Lev. <i>The Language of New Media</i> (2001).</p>
+    </section>
+
+</main>
+</div>
+
+<!-- Esta es la funcion q hace posible las cajas ocultas -->
+
+<script>
+    function toggleMapping() {
+        document.getElementById("cajas-mapping").classList.toggle("abiertas");
+    }
+</script>
+
+</body>
+</html>
