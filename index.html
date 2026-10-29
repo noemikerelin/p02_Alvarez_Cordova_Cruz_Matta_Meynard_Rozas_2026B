@@ -134,7 +134,15 @@
                 <span class="negrita">Image Fulgurator</span> es un proyecto de
                 <span class="negrita">arte y diseño crítico</span> creado en
                 <span class="negrita">2007</span> por el artista alemán
-                <span class="negrita">Julius von Bismarck</span>.
+                <button
+                    type="button"
+                    class="nombre-interactivo"
+                    id="abrirBiografia"
+                    aria-haspopup="dialog"
+                    aria-controls="modalBiografia"
+                >
+                    Julius von Bismarck
+                </button>.
                 Consiste en un dispositivo que aparenta ser una cámara
                 fotográfica convencional, pero que funciona de manera inversa:
                 en lugar de capturar imágenes,
@@ -146,6 +154,58 @@
         </div>
 
     </section>
+
+
+    <!-- VENTANA EMERGENTE: JULIUS VON BISMARCK -->
+
+    <div class="modal-fondo" id="modalBiografia" hidden>
+
+        <div
+            class="modal-cuadro"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="tituloBiografia"
+            tabindex="-1"
+        >
+
+            <button
+                class="modal-cerrar"
+                id="cerrarBiografia"
+                type="button"
+                aria-label="Cerrar biografía"
+            >
+                &times;
+            </button>
+
+            <h2 id="tituloBiografia">
+                Julius von Bismarck
+            </h2>
+
+            <div class="modal-texto">
+
+                <p>
+                    Es un <span class="negrita">artista alemán</span>,
+                    nacido en <span class="negrita">1983</span> en la ciudad
+                    de <span class="negrita">Breisach am Rhein</span>.
+                    Estudió en la Universidad de las Artes de Berlín
+                    (entre 2005 y 2013) y en Hunter College de Nueva York (2007).
+                </p>
+
+                <p>
+                    Ha recibido premios como el
+                    <span class="negrita">Shifting Foundation</span>
+                    en Beverly Hills (2018),
+                    el <span class="negrita">IBB Photography Award,
+                    IBB Atrium</span> en Berlín (2013)
+                    y el <span class="negrita">Prix Ars Electronica Award</span>
+                    en Linz (2009), entre otros.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 
     <!-- 6. GALERÍA DE IMÁGENES -->
@@ -282,47 +342,7 @@
     </section>
 
 
-    <!-- 10. DIAGRAMA DE OBRA -->
-
-    <section class="seccion texto-derecha con-degradado degradado-derecha">
-
-        <div class="encabezado">
-            <span class="indice">04</span>
-            <h2>Diagrama de obra</h2>
-        </div>
-
-        <div class="texto">
-
-            <p>
-                Esquema del funcionamiento de Image Fulgurator, desde la detección del flash hasta el registro de la imagen intervenida.
-            </p>
-
-        </div>
-
-        <div class="diagrama">
-
-            <div class="nodo">1. Preparación de la imagen</div>
-            <div class="flecha">↓</div>
-
-            <div class="nodo">2. Modificación de la cámara</div>
-            <div class="flecha">↓</div>
-
-            <div class="nodo">3. Integración electrónica</div>
-            <div class="flecha">↓</div>
-
-            <div class="nodo">4. Ensamblaje y calibración</div>
-            <div class="flecha">↓</div>
-
-            <div class="nodo">5. Pruebas de funcionamiento</div>
-
-            <p class="nota">Esquema conceptual.</p>
-
-        </div>
-
-    </section>
-
-
-    <!-- 11. REFERENCIAS -->
+    <!-- 10. REFERENCIAS -->
 
     <section class="referencias">
 
@@ -383,6 +403,80 @@
     window.addEventListener("resize", actualizarGaleria);
 
     actualizarGaleria();
+</script>
+
+<script>
+    /* VENTANA EMERGENTE: JULIUS VON BISMARCK */
+
+    const abrirBiografia = document.getElementById("abrirBiografia");
+    const cerrarBiografia = document.getElementById("cerrarBiografia");
+    const modalBiografia = document.getElementById("modalBiografia");
+    const cuadroBiografia = modalBiografia.querySelector(".modal-cuadro");
+
+    function mostrarBiografia() {
+        modalBiografia.hidden = false;
+        document.body.classList.add("modal-abierto");
+        cuadroBiografia.focus();
+    }
+
+    function ocultarBiografia() {
+        modalBiografia.hidden = true;
+        document.body.classList.remove("modal-abierto");
+        abrirBiografia.focus();
+    }
+
+    /* Abrir al pulsar el nombre */
+
+    abrirBiografia.addEventListener("click", mostrarBiografia);
+
+    /* Cerrar al pulsar la X */
+
+    cerrarBiografia.addEventListener("click", ocultarBiografia);
+
+    /* Cerrar al pulsar fuera del cuadro */
+
+    modalBiografia.addEventListener("click", function(evento) {
+        if (evento.target === modalBiografia) {
+            ocultarBiografia();
+        }
+    });
+
+    /* Cerrar al pulsar Escape y mantener el foco dentro del cuadro */
+
+    document.addEventListener("keydown", function(evento) {
+        if (modalBiografia.hidden) return;
+
+        if (evento.key === "Escape") {
+            ocultarBiografia();
+        }
+
+        if (evento.key === "Tab") {
+            const elementos = Array.from(
+                modalBiografia.querySelectorAll(
+                    'button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                )
+            ).filter(elemento => !elemento.disabled);
+
+            if (elementos.length === 0) {
+                evento.preventDefault();
+                return;
+            }
+
+            const primero = elementos[0];
+            const ultimo = elementos[elementos.length - 1];
+
+            if (evento.shiftKey && document.activeElement === primero) {
+                evento.preventDefault();
+                ultimo.focus();
+            } else if (!evento.shiftKey && document.activeElement === ultimo) {
+                evento.preventDefault();
+                primero.focus();
+            } else if (!elementos.includes(document.activeElement)) {
+                evento.preventDefault();
+                primero.focus();
+            }
+        }
+    });
 </script>
 
 </body>
