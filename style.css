@@ -304,7 +304,7 @@ figure img {
 
 .galeria {
     width: 100%;
-    padding: 0 8% 100px;
+    padding: 0 8% 30px;
     background: var(--negro);
 }
 
@@ -497,7 +497,8 @@ figure img {
     min-width: 0;
     margin: 0;
     color: var(--blanco);
-    font-size: 14px;
+    font-size: 17px;
+    line-height: 1.7;
 }
 
 .texto p + p {
@@ -652,7 +653,7 @@ a {
     }
 
     .galeria {
-        padding: 0 25px 70px;
+        padding: 0 25px 20px;
     }
 
     .galeria-imagen {
@@ -703,7 +704,7 @@ a {
     }
 
     .texto {
-        font-size: 14px;
+        font-size: 17px;
     }
 
     .diagrama {
