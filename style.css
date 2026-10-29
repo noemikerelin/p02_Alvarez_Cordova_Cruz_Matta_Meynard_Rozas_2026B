@@ -1,12 +1,33 @@
-/* =========================
-   1. COLORES Y CONFIGURACIÓN
-========================= */
+/* 1. COLORES Y CONFIGURACIÓN */
+
+@font-face {
+    font-family: 'Morvi';
+    src: url('fonts/MORVI-Exfontbd13.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Astra';
+    src: url('fonts/Astra-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Astra';
+    src: url('fonts/Astra-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
 
 :root {
-    --negro: #121212;
+    --negro: #090909;
     --blanco: #FFFFFF;
-    --rojo: #FF0022;
-    --amarillo: #FFD000;
+    --rojo: #E30313;
 }
 
 * {
@@ -17,100 +38,106 @@
 body {
     background: var(--negro);
     color: var(--blanco);
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Astra', sans-serif;
+    font-weight: 300;
     line-height: 1.7;
 }
 
 .contenedor {
-    width: 100;
+    width: 100%;
     max-width: none;
     margin: 0;
 }
 
 h1, h2, h3 {
     color: var(--blanco);
-    font-family: 'Archivo Black', sans-serif;
+    font-family: 'Morvi', sans-serif;
     font-weight: 400;
     text-transform: uppercase;
     line-height: 1.1;
 }
 
 
-/* =========================
-   2. PORTADA CENTRADA
-========================= */
+/* 2. PORTADA CENTRADA */
 
 .portada {
     background: var(--negro);
     text-align: center;
-    padding: 80px 40px 60px;
+    padding: 60px 20px 0;
 }
 
 .numero {
-    max-width: 800px;
-    margin: 0 auto 25px;
+    width: 100%;
+    max-width: none;
+    margin: 0 auto 35px;
     color: var(--blanco);
-    font-size: 11px;
-    letter-spacing: 2px;
+    font-size: clamp(8px, 0.85vw, 13px);
+    letter-spacing: 1px;
     text-transform: uppercase;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 1.8;
+    white-space: nowrap;
 }
 
 h1 {
-    font-size: clamp(45px, 8vw, 100px);
+    width: 100%;
+    font-size: clamp(55px, 12vw, 180px);
     text-align: center;
-    overflow-wrap: anywhere;
+    line-height: 0.8;
+    letter-spacing: -2px;
+    overflow-wrap: normal;
 }
 
 h1 span {
     color: var(--rojo);
 }
 
-.subtitulo {
-    margin-top: 18px;
-    color: var(--blanco);
-    font-family: 'Archivo Black', sans-serif;
-    font-size: clamp(18px, 3vw, 28px);
-    font-weight: 800;
-    letter-spacing: 4px;
-    text-align: center;
-}
 
-.introduccion {
-    max-width: 650px;
-    margin: 25px auto 0;
-    color: var(--blanco);
-    font-size: 14px;
-    text-align: center;
-}
-
-
-/* =========================
-   3. IMAGEN PRINCIPAL
-========================= */
+/* 3. IMAGEN PRINCIPAL */
 
 figure {
-    margin: 20px 0 40px;
+    margin: 0;
 }
 
 figure img {
     width: 100%;
-    max-height: 600px;
-    object-fit: cover;
+    height: auto;
     display: block;
 }
 
-figcaption {
+
+/* 4. INTRODUCCIÓN CENTRAL */
+
+.introduccion-central {
+    width: 100%;
+    min-height: 450px;
+    padding: 100px 10%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--negro);
+    text-align: center;
+}
+
+.introduccion-central p {
+    max-width: 850px;
+    margin: 0 auto;
+
     color: var(--blanco);
-    font-size: 11px;
-    margin: 10px 8% 0;
+    font-family: 'Astra', sans-serif;
+    font-size: clamp(18px, 2vw, 28px);
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.introduccion-central .negrita {
+    font-weight: 700;
 }
 
 
-/* =========================
-   4. SECCIONES Y DIFUMINADO
-========================= */
+/* 5. SECCIONES Y DIFUMINADO */
 
 .seccion {
     position: relative;
@@ -128,9 +155,15 @@ figcaption {
     background: var(--negro);
 }
 
-/* Luz roja difuminada */
+/* Todas las secciones sin difuminado por defecto */
 
 .seccion::before {
+    content: none;
+}
+
+/* Difuminado rojo */
+
+.seccion.con-degradado::before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -138,9 +171,9 @@ figcaption {
 
     background: radial-gradient(
         ellipse at 20% 50%,
-        rgba(255, 0, 34, 0.75) 0%,
-        rgba(255, 0, 34, 0.35) 35%,
-        rgba(255, 0, 34, 0.10) 55%,
+        rgba(227, 3, 19, 0.75) 0%,
+        rgba(227, 3, 19, 0.35) 35%,
+        rgba(227, 3, 19, 0.10) 55%,
         transparent 75%
     );
 
@@ -148,22 +181,20 @@ figcaption {
     pointer-events: none;
 }
 
-/* Alternar el lado del color */
+/* Difuminado hacia la derecha */
 
-.seccion:nth-of-type(odd)::before {
+.seccion.con-degradado.degradado-derecha::before {
     background: radial-gradient(
         ellipse at 80% 50%,
-        rgba(255, 0, 34, 0.75) 0%,
-        rgba(255, 0, 34, 0.35) 35%,
-        rgba(255, 0, 34, 0.10) 55%,
+        rgba(227, 3, 19, 0.75) 0%,
+        rgba(227, 3, 19, 0.35) 35%,
+        rgba(227, 3, 19, 0.10) 55%,
         transparent 75%
     );
 }
 
 
-/* =========================
-   5. TÍTULOS Y NÚMEROS
-========================= */
+/* 6. TÍTULOS Y NÚMEROS */
 
 .encabezado {
     display: block;
@@ -174,9 +205,10 @@ figcaption {
 .indice {
     display: block;
     margin-bottom: 15px;
-    color: var(--amarillo);
+    color: var(--blanco);
+    font-family: 'Morvi', sans-serif;
     font-size: 34px;
-    font-weight: 800;
+    font-weight: 400;
 }
 
 .encabezado h2 {
@@ -187,46 +219,34 @@ figcaption {
 }
 
 
-/* =========================
-   6. DISTRIBUCIÓN ALTERNADA
-========================= */
+/* 7. DISTRIBUCIÓN ALTERNADA */
 
-/* Temas 01, 03 y 05:
-   título a la izquierda y texto a la derecha */
+/* Título a la izquierda y texto a la derecha */
 
-.seccion:nth-of-type(even) .encabezado {
+.texto-derecha .encabezado {
     grid-column: 1;
     grid-row: 1;
 }
 
-.seccion:nth-of-type(even) .texto {
+.texto-derecha .texto {
     grid-column: 2;
     grid-row: 1;
 }
 
-/* Temas 02 y 04:
-   texto a la izquierda y título a la derecha */
+/* Texto a la izquierda y título a la derecha */
 
-.seccion:nth-of-type(odd) .encabezado {
+.texto-izquierda .encabezado {
     grid-column: 2;
     grid-row: 1;
 }
 
-.seccion:nth-of-type(odd) .texto {
+.texto-izquierda .texto {
     grid-column: 1;
     grid-row: 1;
 }
 
-/* Números y títulos sobre el fondo */
 
-.seccion h2 {
-    color: var(--blanco);
-}
-
-
-/* =========================
-   7. PÁRRAFOS
-========================= */
+/* 8. PÁRRAFOS */
 
 .texto {
     width: 100%;
@@ -240,14 +260,21 @@ figcaption {
     margin-top: 18px;
 }
 
+/* Palabras destacadas en blanco */
+
+.negrita {
+    font-weight: 700;
+}
+
+/* Palabras destacadas en rojo */
+
 .destacado {
-    color: var(--amarillo);
+    color: var(--rojo);
+    font-weight: 700;
 }
 
 
-/* =========================
-   8. DIAGRAMA DE OBRA
-========================= */
+/* 9. DIAGRAMA DE OBRA */
 
 .diagrama {
     grid-column: 1 / -1;
@@ -261,16 +288,16 @@ figcaption {
     width: 75%;
     margin: auto;
     padding: 15px;
-    background: var(--amarillo);
-    color: var(--negro);
+    background: var(--rojo);
+    color: var(--blanco);
     text-align: center;
     font-size: 12px;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 .flecha {
     text-align: center;
-    color: var(--amarillo);
+    color: var(--rojo);
     font-size: 24px;
 }
 
@@ -282,9 +309,7 @@ figcaption {
 }
 
 
-/* =========================
-   9. REFERENCIAS
-========================= */
+/* 10. REFERENCIAS */
 
 .referencias {
     width: 100%;
@@ -305,13 +330,11 @@ figcaption {
 }
 
 a {
-    color: var(--amarillo);
+    color: var(--rojo);
 }
 
 
-/* =========================
-   10. DISEÑO PARA CELULARES
-========================= */
+/* 11. DISEÑO PARA CELULARES */
 
 @media (max-width: 650px) {
 
@@ -321,33 +344,39 @@ a {
     }
 
     .portada {
-        padding: 55px 22px 40px;
+        padding: 40px 15px 10px;
     }
 
     .numero {
         font-size: 10px;
-        letter-spacing: 1px;
+        letter-spacing: 0.5px;
+        white-space: normal;
+        margin-bottom: 25px;
     }
 
     h1 {
-        font-size: clamp(40px, 11vw, 65px);
-    }
-
-    .subtitulo {
-        font-size: 18px;
-        letter-spacing: 2px;
-    }
-
-    .introduccion {
-        font-size: 13px;
+        font-size: clamp(40px, 10vw, 65px);
+        letter-spacing: -1px;
+        overflow-wrap: anywhere;
     }
 
     figure {
-        margin: 10px 0 20px;
+        margin: 0;
     }
 
     figure img {
-        max-height: 400px;
+        width: 100%;
+        height: auto;
+    }
+
+    .introduccion-central {
+        min-height: auto;
+        padding: 80px 25px;
+    }
+
+    .introduccion-central p {
+        font-size: 22px;
+        line-height: 1.5;
     }
 
     .seccion {
@@ -358,12 +387,16 @@ a {
 
     /* En móviles, todos los temas se apilan */
 
-    .seccion:nth-of-type(even) .encabezado,
-    .seccion:nth-of-type(odd) .encabezado,
-    .seccion:nth-of-type(even) .texto,
-    .seccion:nth-of-type(odd) .texto {
+    .texto-derecha .encabezado,
+    .texto-izquierda .encabezado {
         grid-column: 1;
-        grid-row: auto;
+        grid-row: 1;
+    }
+
+    .texto-derecha .texto,
+    .texto-izquierda .texto {
+        grid-column: 1;
+        grid-row: 2;
     }
 
     .encabezado h2 {
@@ -379,6 +412,8 @@ a {
     }
 
     .diagrama {
+        grid-column: 1;
+        grid-row: 3;
         margin-top: 10px;
     }
 
