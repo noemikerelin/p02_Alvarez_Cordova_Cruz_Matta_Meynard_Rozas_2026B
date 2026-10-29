@@ -310,7 +310,101 @@
     </section>
 
 
-    <!-- 9. PRINCIPIOS DE LEV MANOVICH -->
+    <!-- 9. ¿QUÉ PROBLEMÁTICAS ABORDA? -->
+
+    <section class="problematicas">
+
+        <h2 class="problematicas-titulo">
+            Qué problemáticas aborda
+        </h2>
+
+        <div class="problematicas-tarjetas">
+
+            <!-- TARJETA 1 -->
+
+            <button class="problematica-tarjeta activa tarjeta-roja"
+                    type="button"
+                    aria-expanded="true">
+
+                <span class="problematica-numero">01</span>
+
+                <h3>Manipulación de la información</h3>
+
+                <p>
+                    Evidencia cómo una imagen puede ser alterada
+                    sin que el espectador perciba la intervención.
+                </p>
+
+            </button>
+
+            <!-- TARJETA 2 -->
+
+            <button class="problematica-tarjeta tarjeta-blanca"
+                    type="button"
+                    aria-expanded="false">
+
+                <span class="problematica-numero">02</span>
+
+                <h3>Confianza en la tecnología</h3>
+
+                <p>
+                    Cuestiona la idea de que las cámaras registran
+                    la realidad de manera completamente objetiva.
+                </p>
+
+            </button>
+
+            <!-- TARJETA 3 -->
+
+            <button class="problematica-tarjeta tarjeta-roja"
+                    type="button"
+                    aria-expanded="false">
+
+                <span class="problematica-numero">03</span>
+
+                <h3>Poder de los medios visuales</h3>
+
+                <p>
+                    Plantea cómo las imágenes pueden influir
+                    en nuestras opiniones, recuerdos e interpretaciones.
+                </p>
+
+            </button>
+
+            <!-- TARJETA 4 -->
+
+            <button class="problematica-tarjeta tarjeta-blanca"
+                    type="button"
+                    aria-expanded="false">
+
+                <span class="problematica-numero">04</span>
+
+                <h3>Percepción de la realidad</h3>
+
+                <p>
+                    Expone las diferencias entre lo que experimentamos
+                    directamente y aquello que registran los
+                    dispositivos tecnológicos.
+                </p>
+
+            </button>
+
+        </div>
+
+        <!-- TEXTO INFERIOR -->
+
+        <p class="problematicas-descripcion">
+            Estas problemáticas se relacionan con la intención del artista
+            de <span class="negrita">intervenir la memoria visual</span>
+            y <span class="negrita">cuestionar la credibilidad</span>
+            que atribuimos a los registros fotográficos
+            (Universität der Künste Berlin, s. f.).
+        </p>
+
+    </section>
+
+
+    <!-- 10. PRINCIPIOS DE LEV MANOVICH -->
 
     <section class="seccion texto-izquierda">
 
@@ -342,7 +436,7 @@
     </section>
 
 
-    <!-- 10. REFERENCIAS -->
+    <!-- 11. REFERENCIAS -->
 
     <section class="referencias">
 
@@ -476,6 +570,30 @@
                 primero.focus();
             }
         }
+    });
+</script>
+
+<script>
+    /* TARJETAS INTERACTIVAS: PROBLEMÁTICAS */
+
+    const tarjetasProblematicas = document.querySelectorAll(
+        ".problematica-tarjeta"
+    );
+
+    tarjetasProblematicas.forEach(function(tarjeta) {
+
+        tarjeta.addEventListener("click", function() {
+
+            tarjetasProblematicas.forEach(function(otraTarjeta) {
+                otraTarjeta.classList.remove("activa");
+                otraTarjeta.setAttribute("aria-expanded", "false");
+            });
+
+            tarjeta.classList.add("activa");
+            tarjeta.setAttribute("aria-expanded", "true");
+
+        });
+
     });
 </script>
 
