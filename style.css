@@ -111,7 +111,7 @@ figure img {
 .introduccion-central {
     width: 100%;
     min-height: 450px;
-    padding: 100px 10%;
+    padding: 100px 10% 50px;
 
     display: flex;
     justify-content: center;
@@ -137,7 +137,169 @@ figure img {
 }
 
 
-/* 5. SECCIONES Y DIFUMINADO */
+/* 5. CUADROS INTERACTIVOS */
+
+.cuadros-interactivos {
+    width: 100%;
+    padding: 30px 8% 120px;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+
+    background: var(--negro);
+    align-items: start;
+}
+
+.cuadro {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+
+    min-width: 0;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 18px;
+
+    background: var(--negro);
+    color: var(--blanco);
+
+    transition: border-color 0.3s ease;
+}
+
+/* Degradado rojo dentro de cada cuadro */
+
+.cuadro::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: radial-gradient(
+        ellipse at 25% 15%,
+        rgba(227, 3, 19, 0.55) 0%,
+        rgba(227, 3, 19, 0.22) 40%,
+        transparent 80%
+    );
+
+    pointer-events: none;
+}
+
+.cuadro:nth-child(2)::before {
+    background: radial-gradient(
+        ellipse at 75% 15%,
+        rgba(227, 3, 19, 0.55) 0%,
+        rgba(227, 3, 19, 0.22) 40%,
+        transparent 80%
+    );
+}
+
+/* Parte visible del cuadro */
+
+.cuadro summary {
+    position: relative;
+    min-height: 230px;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    cursor: pointer;
+    list-style: none;
+}
+
+.cuadro summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Número */
+
+.cuadro-numero {
+    display: block;
+    margin-bottom: 25px;
+
+    font-family: 'Morvi', sans-serif;
+    font-size: 38px;
+    line-height: 1;
+}
+
+/* Título */
+
+.cuadro h3 {
+    max-width: 95%;
+
+    font-family: 'Morvi', sans-serif;
+    font-size: clamp(20px, 2vw, 30px);
+    font-weight: 400;
+    line-height: 1.15;
+    text-transform: uppercase;
+}
+
+/* Símbolo para abrir y cerrar */
+
+.cuadro-icono {
+    position: absolute;
+    right: 25px;
+    bottom: 22px;
+
+    width: 18px;
+    height: 18px;
+}
+
+.cuadro-icono::before,
+.cuadro-icono::after {
+    content: "";
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    background: var(--blanco);
+    transform: translate(-50%, -50%);
+}
+
+.cuadro-icono::before {
+    width: 18px;
+    height: 2px;
+}
+
+.cuadro-icono::after {
+    width: 2px;
+    height: 18px;
+
+    transition: opacity 0.2s ease;
+}
+
+/* Cuando el cuadro está abierto */
+
+.cuadro[open] {
+    border-color: var(--rojo);
+}
+
+.cuadro[open] .cuadro-icono::after {
+    opacity: 0;
+}
+
+/* Texto desplegable */
+
+.cuadro-contenido {
+    padding: 0 25px 30px;
+}
+
+.cuadro-contenido p {
+    max-width: 100%;
+    color: var(--blanco);
+    font-family: 'Astra', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.cuadro-contenido p + p {
+    margin-top: 20px;
+}
+
+/* 6. SECCIONES Y DIFUMINADO */
 
 .seccion {
     position: relative;
@@ -194,7 +356,7 @@ figure img {
 }
 
 
-/* 6. TÍTULOS Y NÚMEROS */
+/* 7. TÍTULOS Y NÚMEROS */
 
 .encabezado {
     display: block;
@@ -377,6 +539,34 @@ a {
     .introduccion-central p {
         font-size: 22px;
         line-height: 1.5;
+    }
+
+    .cuadros-interactivos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 25px 80px;
+    }
+
+    .cuadro summary {
+        min-height: 190px;
+        padding: 22px;
+    }
+
+    .cuadro-numero {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .cuadro h3 {
+        font-size: 24px;
+    }
+
+    .cuadro-contenido {
+        padding: 0 22px 25px;
+    }
+
+    .cuadro-contenido p {
+        font-size: 14px;
     }
 
     .seccion {
