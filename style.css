@@ -966,21 +966,48 @@ body.modal-abierto {
 
 .referencias {
     width: 100%;
-    padding: 45px 8%;
+    padding: 70px 8% 90px;
     background: var(--negro);
 }
 
-.referencias h2 {
-    font-size: 28px;
-}
+/* Título */
 
-.referencias p {
-    margin-top: 12px;
+.referencias h2 {
+    margin-bottom: 35px;
 
     color: var(--blanco);
-    font-size: 12px;
+    font-family: 'Morvi', sans-serif;
+    font-size: clamp(30px, 4vw, 48px);
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+/* Texto de las referencias */
+
+.referencias p {
+    max-width: 1000px;
+    margin-top: 20px;
+
+    color: var(--blanco);
+    font-family: 'Astra', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
 
     overflow-wrap: anywhere;
+}
+
+/* Enlaces */
+
+.referencias a {
+    color: var(--rojo);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.referencias a:hover {
+    color: var(--blanco);
+    text-decoration: underline;
 }
 
 
@@ -1256,10 +1283,18 @@ body.modal-abierto {
     /* Referencias */
 
     .referencias {
-        padding: 35px 25px;
+        padding: 50px 25px 70px;
     }
 
-}
+    .referencias h2 {
+        font-size: 32px;
+        margin-bottom: 25px;
+    }
+
+    .referencias p {
+        font-size: 14px;
+        margin-top: 18px;
+    }
 
 
 /* 13. REDUCIR ANIMACIONES SI EL USUARIO LO PREFIERE */
