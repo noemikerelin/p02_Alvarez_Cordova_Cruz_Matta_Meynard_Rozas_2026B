@@ -5,43 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Encargo P02</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
 <div class="contenedor">
 <main>
-
 
     <!-- 1. PORTADA PRINCIPAL -->
 
     <section class="portada">
-
         <p class="numero">
             Grupo 01: Rosario Álvarez, Javiera Córdova,
             Noemí Cruz, María Matta, Amélie Meynard y Pedro Rozas
         </p>
 
         <h1><span>Image Fulgurator</span></h1>
-
     </section>
 
 
     <!-- 2. IMAGEN PRINCIPAL -->
 
     <figure>
-
-        <img src="img/imagen-portada2.png"
-             alt="Imagen principal del proyecto Image Fulgurator">
-
+        <img
+            src="img/imagen-portada2.png"
+            alt="Imagen principal del proyecto Image Fulgurator"
+        >
     </figure>
 
 
     <!-- 3. INTRODUCCIÓN -->
 
     <section class="introduccion-central">
-
         <p>
             <span class="negrita">Image Fulgurator</span> es un proyecto que se
             relaciona con el <span class="negrita">Video Mapping</span>, una técnica
@@ -51,11 +47,10 @@
             visuales, alterando temporalmente su apariencia y la percepción
             del espectador mediante ilusiones ópticas (Arquinetpolis, s. f.).
         </p>
-
     </section>
 
 
-    <!-- 4. CUADROS INTERACTIVOS -->
+    <!-- 4. CUADROS INTERACTIVOS: VIDEO MAPPING -->
 
     <section class="cuadros-interactivos">
 
@@ -65,7 +60,7 @@
 
                 <h3>Video Mapping como herramienta de resignificación</h3>
 
-                <span class="cuadro-icono"></span>
+                <span class="cuadro-icono" aria-hidden="true"></span>
             </summary>
 
             <div class="cuadro-contenido">
@@ -88,7 +83,7 @@
 
                 <h3>Video Mapping como herramienta de activismo</h3>
 
-                <span class="cuadro-icono"></span>
+                <span class="cuadro-icono" aria-hidden="true"></span>
             </summary>
 
             <div class="cuadro-contenido">
@@ -113,27 +108,26 @@
                     no autorizadas para transformar el espectáculo visual en una
                     herramienta táctica y subversiva de activismo.
                 </p>
-
             </div>
         </details>
 
     </section>
 
 
-    <!-- 5. ¿QUÉ ES IMAGE FULGURATOR? -->
+    <!-- 5. QUÉ ES IMAGE FULGURATOR -->
 
-    <section class="seccion texto-derecha">
+    <section class="seccion texto-derecha con-degradado">
 
         <div class="encabezado">
             <h2>Qué es Image Fulgurator</h2>
         </div>
 
         <div class="texto">
-
             <p>
                 <span class="negrita">Image Fulgurator</span> es un proyecto de
                 <span class="negrita">arte y diseño crítico</span> creado en
-                <span class="negrita">2007</span> por el artista alemán
+                <span class="negrita">2007</span> por el artista
+
                 <button
                     type="button"
                     class="nombre-interactivo"
@@ -143,6 +137,7 @@
                 >
                     Julius von Bismarck
                 </button>.
+
                 Consiste en un dispositivo que aparenta ser una cámara
                 fotográfica convencional, pero que funciona de manera inversa:
                 en lugar de capturar imágenes,
@@ -150,7 +145,6 @@
                 que aparecen en las fotografías tomadas por otras personas,
                 sin que estas perciban la intervención (von Bismarck, s. f.).
             </p>
-
         </div>
 
     </section>
@@ -177,12 +171,9 @@
                 &times;
             </button>
 
-            <h2 id="tituloBiografia">
-                Julius von Bismarck
-            </h2>
+            <h2 id="tituloBiografia">Julius von Bismarck</h2>
 
             <div class="modal-texto">
-
                 <p>
                     Es un <span class="negrita">artista alemán</span>,
                     nacido en <span class="negrita">1983</span> en la ciudad
@@ -200,7 +191,6 @@
                     y el <span class="negrita">Prix Ars Electronica Award</span>
                     en Linz (2009), entre otros.
                 </p>
-
             </div>
 
         </div>
@@ -210,25 +200,31 @@
 
     <!-- 6. GALERÍA DE IMÁGENES -->
 
-    <section class="galeria">
+    <section class="galeria" aria-label="Galería de intervenciones visuales">
 
         <div class="galeria-contenedor">
 
             <div class="galeria-pista" id="galeriaPista">
 
                 <div class="galeria-imagen">
-                    <img src="img/imagen1.png"
-                        alt="Intervención visual con iluminación roja">
+                    <img
+                        src="img/imagen1.png"
+                        alt="Intervención visual con iluminación roja"
+                    >
                 </div>
 
                 <div class="galeria-imagen">
-                    <img src="img/imagen2.png"
-                        alt="Retrato intervenido mediante proyección">
+                    <img
+                        src="img/imagen2.png"
+                        alt="Retrato intervenido mediante proyección"
+                    >
                 </div>
 
                 <div class="galeria-imagen">
-                    <img src="img/imagen3.png"
-                        alt="Intervención visual en un escenario">
+                    <img
+                        src="img/imagen3.png"
+                        alt="Intervención visual en un escenario"
+                    >
                 </div>
 
             </div>
@@ -237,17 +233,21 @@
 
         <div class="galeria-controles">
 
-            <button class="galeria-boton"
-                    id="galeriaAnterior"
-                    type="button"
-                    aria-label="Ver imagen anterior">
+            <button
+                class="galeria-boton"
+                id="galeriaAnterior"
+                type="button"
+                aria-label="Ver imagen anterior"
+            >
                 &#10094;
             </button>
 
-            <button class="galeria-boton"
-                    id="galeriaSiguiente"
-                    type="button"
-                    aria-label="Ver imagen siguiente">
+            <button
+                class="galeria-boton"
+                id="galeriaSiguiente"
+                type="button"
+                aria-label="Ver imagen siguiente"
+            >
                 &#10095;
             </button>
 
@@ -256,45 +256,49 @@
     </section>
 
 
-
     <!-- 7. ¿CÓMO FUNCIONA? -->
 
+    <section class="seccion-funcionamiento">
 
-    <section class="seccion texto-izquierda-2">
+        <h2 class="funcionamiento-titulo">
+            Cómo funciona
+        </h2>
 
+        <div class="funcionamiento-contenido">
 
-        <div class="texto">
+            <!-- TEXTO A LA IZQUIERDA -->
 
-            <h2>Cómo funciona</h2>
+            <div class="texto">
+                <p>
+                    El dispositivo utiliza un
+                    <span class="negrita">sensor que detecta el flash</span>
+                    de otra cámara y activa una proyección durante unos pocos
+                    milisegundos. Esta queda registrada en la fotografía,
+                    aunque resulta prácticamente imperceptible para el ojo
+                    humano debido a su corta duración. De esta manera, las
+                    personas descubren elementos inesperados al revisar sus
+                    fotografías, generando una
+                    <span class="negrita">contradicción entre lo que observaron
+                    y lo que quedó registrado</span>
+                    (von Bismarck, s. f.; Universität der Künste Berlin, s. f.).
+                </p>
+            </div>
 
-            <br>
-            <p>
-                El dispositivo utiliza un
-                <span class="negrita">sensor que detecta el flash</span>
-                de otra cámara y activa una proyección durante unos pocos
-                milisegundos. Esta queda registrada en la fotografía,
-                aunque resulta prácticamente imperceptible para el ojo
-                humano debido a su corta duración. De esta manera, las
-                personas descubren elementos inesperados al revisar sus
-                fotografías, generando una
-                <span class="negrita">contradicción entre lo que observaron
-                y lo que quedó registrado</span>
-                (von Bismarck, s. f.; Universität der Künste Berlin, s. f.).
-            </p>
+            <!-- IMAGEN A LA DERECHA -->
 
-        </div>
+            <div class="funcionamiento">
+                <img
+                    src="img/camara.png"
+                    alt="Diagrama de funcionamiento de la cámara"
+                >
+            </div>
 
-        <div class="funcionamiento">
-            <img src="img/camara.png"
-            alt="Diagrama de funcionamiento de la cámara">
-    
         </div>
 
     </section>
 
 
-
-    <!-- 8. ¿CUÁL ES SU OBJETIVO? -->
+    <!-- 8. CUÁL ES SU OBJETIVO -->
 
     <section class="seccion texto-derecha con-degradado">
 
@@ -304,9 +308,10 @@
 
         <div class="texto">
             <p>
-                El proyecto busca <span class="negrita">cuestionar la confianza
-                que depositamos en las fotografías</span> como representaciones
-                fieles y objetivas de la realidad. A través de intervenciones
+                El proyecto busca
+                <span class="negrita">cuestionar la confianza que depositamos
+                en las fotografías</span> como representaciones fieles y
+                objetivas de la realidad. A través de intervenciones
                 inesperadas, demuestra que las imágenes pueden ser
                 <span class="negrita">manipuladas incluso durante el momento
                 de su captura</span>. Así, invita a reflexionar sobre cómo
@@ -319,7 +324,7 @@
     </section>
 
 
-    <!-- 9. ¿QUÉ PROBLEMÁTICAS ABORDA? -->
+    <!-- 9. QUÉ PROBLEMÁTICAS ABORDA -->
 
     <section class="problematicas">
 
@@ -331,10 +336,11 @@
 
             <!-- TARJETA 1 -->
 
-            <button class="problematica-tarjeta activa tarjeta-roja"
-                    type="button"
-                    aria-expanded="true">
-
+            <button
+                class="problematica-tarjeta activa tarjeta-roja"
+                type="button"
+                aria-expanded="true"
+            >
                 <span class="problematica-numero">01</span>
 
                 <h3>Manipulación de la información</h3>
@@ -343,15 +349,16 @@
                     Evidencia cómo una imagen puede ser alterada
                     sin que el espectador perciba la intervención.
                 </p>
-
             </button>
+
 
             <!-- TARJETA 2 -->
 
-            <button class="problematica-tarjeta tarjeta-blanca"
-                    type="button"
-                    aria-expanded="false">
-
+            <button
+                class="problematica-tarjeta tarjeta-blanca"
+                type="button"
+                aria-expanded="false"
+            >
                 <span class="problematica-numero">02</span>
 
                 <h3>Confianza en la tecnología</h3>
@@ -360,15 +367,16 @@
                     Cuestiona la idea de que las cámaras registran
                     la realidad de manera completamente objetiva.
                 </p>
-
             </button>
+
 
             <!-- TARJETA 3 -->
 
-            <button class="problematica-tarjeta tarjeta-roja"
-                    type="button"
-                    aria-expanded="false">
-
+            <button
+                class="problematica-tarjeta tarjeta-roja"
+                type="button"
+                aria-expanded="false"
+            >
                 <span class="problematica-numero">03</span>
 
                 <h3>Poder de los medios visuales</h3>
@@ -377,15 +385,16 @@
                     Plantea cómo las imágenes pueden influir
                     en nuestras opiniones, recuerdos e interpretaciones.
                 </p>
-
             </button>
+
 
             <!-- TARJETA 4 -->
 
-            <button class="problematica-tarjeta tarjeta-blanca"
-                    type="button"
-                    aria-expanded="false">
-
+            <button
+                class="problematica-tarjeta tarjeta-blanca"
+                type="button"
+                aria-expanded="false"
+            >
                 <span class="problematica-numero">04</span>
 
                 <h3>Percepción de la realidad</h3>
@@ -395,12 +404,9 @@
                     directamente y aquello que registran los
                     dispositivos tecnológicos.
                 </p>
-
             </button>
 
         </div>
-
-        <!-- TEXTO INFERIOR -->
 
         <p class="problematicas-descripcion">
             Estas problemáticas se relacionan con la intención del artista
@@ -413,31 +419,58 @@
     </section>
 
 
-    <!-- 10. PRINCIPIOS DE LEV MANOVICH -->
+    <!-- 10. REFLEXIÓN: IMAGE FULGURATOR Y VIDEO MAPPING -->
 
-    <section class="titulo-central">
+    <section class="seccion texto-derecha con-degradado">
 
         <div class="encabezado">
-            <h2>Principios de los nuevos medios de Lev Manovich</h2>
+            <h2>Reflexión: Image Fulgurator y Video Mapping</h2>
         </div>
 
-        </section>
-            <!-- 4. CUADROS INTERACTIVOS LEV MANOVICH -->
+        <div class="texto">
+            <p>
+                Aunque <span class="negrita">Image Fulgurator no corresponde
+                técnicamente al Video Mapping</span>, ambas prácticas utilizan
+                la <span class="negrita">proyección sobre superficies reales</span>
+                para intervenir y resignificar espacios. La diferencia radica
+                en que el <span class="negrita">Video Mapping transforma la
+                percepción visual del entorno</span>, mientras que
+                <span class="negrita">Image Fulgurator modifica su registro
+                fotográfico</span>, cuestionando la
+                <span class="negrita">objetividad de las imágenes</span>
+                y nuestra interpretación de la realidad
+                (von Bismarck, s. f.; Universität der Künste Berlin, s. f.).
+            </p>
+        </div>
 
-    <section class="cuadros-interactivos-2">
+    </section>
+
+
+    <!-- 11. PRINCIPIOS DE LEV MANOVICH -->
+
+    <section class="titulo-central">
+        <h2>Principios de los nuevos medios de Lev Manovich</h2>
+    </section>
+
+
+    <!-- CINCO CUADROS INTERACTIVOS -->
+
+    <section
+        class="cuadros-interactivos-2"
+        aria-label="Cinco principios de los nuevos medios"
+    >
 
         <details class="cuadro">
             <summary>
                 <span class="cuadro-numero">01</span>
-
                 <h3>Representación numérica</h3>
-
-                <span class="cuadro-icono"></span>
+                <span class="cuadro-icono" aria-hidden="true"></span>
             </summary>
 
             <div class="cuadro-contenido">
                 <p>
-                    La imagen obtenida es un <span class="negrita">objeto de los nuevos medios</span>, 
+                    La imagen obtenida es un
+                    <span class="negrita">objeto de los nuevos medios</span>,
                     lo que significa que se puede representar numéricamente.
                 </p>
             </div>
@@ -447,81 +480,79 @@
         <details class="cuadro">
             <summary>
                 <span class="cuadro-numero">02</span>
-
                 <h3>Modularidad</h3>
-
-                <span class="cuadro-icono"></span>
+                <span class="cuadro-icono" aria-hidden="true"></span>
             </summary>
 
             <div class="cuadro-contenido">
                 <p>
-                    La imagen digital obtenida está compuesta de <span class="negrita">pixeles</span>, que son muestras discretas independientes.
+                    La imagen digital obtenida está compuesta de
+                    <span class="negrita">pixeles</span>,
+                    que son muestras discretas independientes.
                 </p>
-
             </div>
         </details>
+
 
         <details class="cuadro">
             <summary>
                 <span class="cuadro-numero">03</span>
-
                 <h3>Automatización</h3>
-
-                <span class="cuadro-icono"></span>
+                <span class="cuadro-icono" aria-hidden="true"></span>
             </summary>
 
             <div class="cuadro-contenido">
                 <p>
-                    Si bien lo más típico es pensar en automatizaciones puramente digitales, este proyecto
-                    utiliza este principio a través de un <span class="negrita">sensor que detecta el flash</span> 
+                    Si bien lo más típico es pensar en automatizaciones
+                    puramente digitales, este proyecto utiliza este principio
+                    a través de un
+                    <span class="negrita">sensor que detecta el flash</span>
                     y automatiza el proceso de intervención fotográfica.
                 </p>
-
             </div>
         </details>
+
 
         <details class="cuadro">
             <summary>
                 <span class="cuadro-numero">04</span>
-
                 <h3>Variabilidad</h3>
-
-                <span class="cuadro-icono"></span>
+                <span class="cuadro-icono" aria-hidden="true"></span>
             </summary>
 
             <div class="cuadro-contenido">
                 <p>
-                    La base del proyecto es <span class="negrita">manipular las fotografías</span> de otras personas en el momento que están siendo tomadas.
-                    Esto genera que la imagen obtenida sea diferente a la que la persona cree que fotografió.
+                    La base del proyecto es
+                    <span class="negrita">manipular las fotografías</span>
+                    de otras personas en el momento que están siendo tomadas.
+                    Esto genera que la imagen obtenida sea diferente a la
+                    que la persona cree que fotografió.
                 </p>
-
             </div>
         </details>
+
 
         <details class="cuadro">
             <summary>
                 <span class="cuadro-numero">05</span>
-
                 <h3>Transcodificación</h3>
-
-                <span class="cuadro-icono"></span>
+                <span class="cuadro-icono" aria-hidden="true"></span>
             </summary>
 
             <div class="cuadro-contenido">
                 <p>
-                    Al funcionar como un <span class="negrita">puente entre lo físico y lo digital</span>, existe una transcodificación
-                    de la información entre ambos planos.
+                    Al funcionar como un
+                    <span class="negrita">puente entre lo físico y lo digital</span>,
+                    existe una transcodificación de la información
+                    entre ambos planos.
                 </p>
-
             </div>
         </details>
 
     </section>
 
 
-
-
-    <!-- 11. REFERENCIAS -->
+    <!-- 12. REFERENCIAS -->
 
     <section class="referencias">
 
@@ -529,7 +560,9 @@
 
         <p>
             Julius von Bismarck.
-            <a href="https://juliusvonbismarck.com/">Sitio oficial</a>.
+            <a href="https://juliusvonbismarck.com/">
+                Sitio oficial
+            </a>.
         </p>
 
         <p>
@@ -538,11 +571,16 @@
 
     </section>
 
-
 </main>
 </div>
 
+
+<!-- JAVASCRIPT -->
+
 <script>
+
+    /* 1. GALERÍA DE IMÁGENES */
+
     const galeriaPista = document.getElementById("galeriaPista");
     const botonAnterior = document.getElementById("galeriaAnterior");
     const botonSiguiente = document.getElementById("galeriaSiguiente");
@@ -553,14 +591,23 @@
 
     function actualizarGaleria() {
         const anchoImagen = imagenes[0].getBoundingClientRect().width;
-        const espacio = parseFloat(getComputedStyle(galeriaPista).gap);
+        const espacio = parseFloat(getComputedStyle(galeriaPista).gap) || 0;
 
-        const imagenesVisibles = window.innerWidth <= 650 ? 1 : 2;
-        const posicionMaxima = imagenes.length - imagenesVisibles;
+        const imagenesVisibles =
+            window.matchMedia("(max-width: 650px)").matches ? 1 : 2;
 
-        posicionActual = Math.min(posicionActual, posicionMaxima);
+        const posicionMaxima = Math.max(
+            0,
+            imagenes.length - imagenesVisibles
+        );
 
-        const desplazamiento = posicionActual * (anchoImagen + espacio);
+        posicionActual = Math.max(
+            0,
+            Math.min(posicionActual, posicionMaxima)
+        );
+
+        const desplazamiento =
+            posicionActual * (anchoImagen + espacio);
 
         galeriaPista.style.transform =
             `translateX(-${desplazamiento}px)`;
@@ -580,12 +627,12 @@
     });
 
     window.addEventListener("resize", actualizarGaleria);
+    window.addEventListener("load", actualizarGaleria);
 
     actualizarGaleria();
-</script>
 
-<script>
-    /* VENTANA EMERGENTE: JULIUS VON BISMARCK */
+
+    /* 2. BIOGRAFÍA EMERGENTE */
 
     const abrirBiografia = document.getElementById("abrirBiografia");
     const cerrarBiografia = document.getElementById("cerrarBiografia");
@@ -595,7 +642,7 @@
     function mostrarBiografia() {
         modalBiografia.hidden = false;
         document.body.classList.add("modal-abierto");
-        cuadroBiografia.focus();
+        cerrarBiografia.focus();
     }
 
     function ocultarBiografia() {
@@ -604,72 +651,64 @@
         abrirBiografia.focus();
     }
 
-    /* Abrir al pulsar el nombre */
-
     abrirBiografia.addEventListener("click", mostrarBiografia);
-
-    /* Cerrar al pulsar la X */
-
     cerrarBiografia.addEventListener("click", ocultarBiografia);
 
-    /* Cerrar al pulsar fuera del cuadro */
-
-    modalBiografia.addEventListener("click", function(evento) {
+    modalBiografia.addEventListener("click", function (evento) {
         if (evento.target === modalBiografia) {
             ocultarBiografia();
         }
     });
 
-    /* Cerrar al pulsar Escape y mantener el foco dentro del cuadro */
-
-    document.addEventListener("keydown", function(evento) {
+    document.addEventListener("keydown", function (evento) {
         if (modalBiografia.hidden) return;
 
         if (evento.key === "Escape") {
             ocultarBiografia();
+            return;
         }
 
-        if (evento.key === "Tab") {
-            const elementos = Array.from(
-                modalBiografia.querySelectorAll(
-                    'button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-                )
-            ).filter(elemento => !elemento.disabled);
+        if (evento.key !== "Tab") return;
 
-            if (elementos.length === 0) {
-                evento.preventDefault();
-                return;
-            }
+        const elementos = Array.from(
+            modalBiografia.querySelectorAll(
+                'button:not([disabled]), a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+            )
+        );
 
-            const primero = elementos[0];
-            const ultimo = elementos[elementos.length - 1];
+        const primero = elementos[0];
+        const ultimo = elementos[elementos.length - 1];
 
-            if (evento.shiftKey && document.activeElement === primero) {
-                evento.preventDefault();
-                ultimo.focus();
-            } else if (!evento.shiftKey && document.activeElement === ultimo) {
-                evento.preventDefault();
-                primero.focus();
-            } else if (!elementos.includes(document.activeElement)) {
-                evento.preventDefault();
-                primero.focus();
-            }
+        if (!primero) {
+            evento.preventDefault();
+            cuadroBiografia.focus();
+            return;
+        }
+
+        if (evento.shiftKey && document.activeElement === primero) {
+            evento.preventDefault();
+            ultimo.focus();
+        } else if (
+            !evento.shiftKey &&
+            document.activeElement === ultimo
+        ) {
+            evento.preventDefault();
+            primero.focus();
         }
     });
-</script>
 
-<script>
-    /* TARJETAS INTERACTIVAS: PROBLEMÁTICAS */
+
+    /* 3. TARJETAS INTERACTIVAS: PROBLEMÁTICAS */
 
     const tarjetasProblematicas = document.querySelectorAll(
         ".problematica-tarjeta"
     );
 
-    tarjetasProblematicas.forEach(function(tarjeta) {
+    tarjetasProblematicas.forEach(function (tarjeta) {
 
-        tarjeta.addEventListener("click", function() {
+        tarjeta.addEventListener("click", function () {
 
-            tarjetasProblematicas.forEach(function(otraTarjeta) {
+            tarjetasProblematicas.forEach(function (otraTarjeta) {
                 otraTarjeta.classList.remove("activa");
                 otraTarjeta.setAttribute("aria-expanded", "false");
             });
@@ -680,6 +719,7 @@
         });
 
     });
+
 </script>
 
 </body>

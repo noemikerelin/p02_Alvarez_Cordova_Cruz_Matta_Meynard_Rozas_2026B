@@ -1,4 +1,4 @@
-/* 1. COLORES Y CONFIGURACIÓN */
+/* 1. TIPOGRAFÍAS, COLORES Y CONFIGURACIÓN */
 
 @font-face {
     font-family: 'Morvi';
@@ -45,11 +45,12 @@ body {
 
 .contenedor {
     width: 100%;
-    max-width: none;
     margin: 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: var(--blanco);
     font-family: 'Morvi', sans-serif;
     font-weight: 400;
@@ -57,8 +58,21 @@ h1, h2, h3 {
     line-height: 1.1;
 }
 
+.negrita {
+    font-weight: 700;
+}
 
-/* 2. PORTADA CENTRADA */
+.destacado {
+    color: var(--rojo);
+    font-weight: 700;
+}
+
+a {
+    color: var(--rojo);
+}
+
+
+/* 2. PORTADA E IMAGEN PRINCIPAL */
 
 .portada {
     background: var(--negro);
@@ -68,7 +82,6 @@ h1, h2, h3 {
 
 .numero {
     width: 100%;
-    max-width: none;
     margin: 0 auto 35px;
     color: var(--blanco);
     font-size: clamp(8px, 0.85vw, 13px);
@@ -92,9 +105,6 @@ h1 span {
     color: var(--rojo);
 }
 
-
-/* 3. IMAGEN PRINCIPAL */
-
 figure {
     margin: 0;
 }
@@ -106,7 +116,7 @@ figure img {
 }
 
 
-/* 4. INTRODUCCIÓN CENTRAL */
+/* 3. INTRODUCCIÓN CENTRAL */
 
 .introduccion-central {
     width: 100%;
@@ -124,32 +134,53 @@ figure img {
 .introduccion-central p {
     max-width: 850px;
     margin: 0 auto;
-
     color: var(--blanco);
-    font-family: 'Astra', sans-serif;
     font-size: clamp(18px, 2vw, 28px);
     font-weight: 300;
     line-height: 1.5;
 }
 
-.introduccion-central .negrita {
-    font-weight: 700;
-}
 
+/* 4. CUADROS INTERACTIVOS */
+/* Estilos compartidos por Video Mapping y Lev Manovich */
 
-/* 5. CUADROS INTERACTIVOS */
-
-.cuadros-interactivos {
+.cuadros-interactivos,
+.cuadros-interactivos-2 {
     width: 100%;
     padding: 30px 8% 35px;
 
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 25px;
 
     background: var(--negro);
     align-items: start;
 }
+
+/* Dos cuadros de Video Mapping */
+
+.cuadros-interactivos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Cinco cuadros de Lev Manovich */
+
+.cuadros-interactivos-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 25px;
+    padding: 30px 8% 35px;
+}
+
+/* Tamaño de cada cuadro */
+
+.cuadros-interactivos-2 .cuadro {
+    flex: 0 1 calc((100% - 50px) / 3);
+    min-width: 0;
+}
+
+/* Estilo general */
 
 .cuadro {
     position: relative;
@@ -157,6 +188,7 @@ figure img {
     isolation: isolate;
 
     min-width: 0;
+
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 18px;
 
@@ -166,7 +198,7 @@ figure img {
     transition: border-color 0.3s ease;
 }
 
-/* Degradado rojo dentro de cada cuadro */
+/* Degradado interior */
 
 .cuadro::before {
     content: "";
@@ -193,10 +225,11 @@ figure img {
     );
 }
 
-/* Parte visible del cuadro */
+/* Parte visible */
 
 .cuadro summary {
     position: relative;
+
     min-height: 230px;
     padding: 25px;
 
@@ -228,14 +261,13 @@ figure img {
 .cuadro h3 {
     max-width: 95%;
 
-    font-family: 'Morvi', sans-serif;
     font-size: clamp(20px, 2vw, 30px);
-    font-weight: 400;
     line-height: 1.15;
-    text-transform: uppercase;
+
+    overflow-wrap: anywhere;
 }
 
-/* Símbolo para abrir y cerrar */
+/* Icono de abrir y cerrar */
 
 .cuadro-icono {
     position: absolute;
@@ -270,7 +302,7 @@ figure img {
     transition: opacity 0.2s ease;
 }
 
-/* Cuando el cuadro está abierto */
+/* Estado abierto */
 
 .cuadro[open] {
     border-color: var(--rojo);
@@ -289,9 +321,8 @@ figure img {
 .cuadro-contenido p {
     max-width: 100%;
     color: var(--blanco);
-    font-family: 'Astra', sans-serif;
+
     font-size: 15px;
-    font-weight: 300;
     line-height: 1.6;
 }
 
@@ -299,15 +330,232 @@ figure img {
     margin-top: 20px;
 }
 
+/* Ajustes exclusivos de los cinco cuadros */
 
-/* VENTANA EMERGENTE: JULIUS VON BISMARCK */
+.cuadros-interactivos-2 .cuadro h3 {
+    font-size: clamp(20px, 2vw, 28px);
+    overflow-wrap: normal;
+    word-break: normal;
+}
 
-/* Nombre interactivo dentro del párrafo */
+.cuadros-interactivos-2 .cuadro-numero {
+    font-size: 32px;
+}
+
+
+/* 5. SECCIONES ALTERNADAS Y DEGRADADOS */
+
+.seccion {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 50px;
+
+    width: 100%;
+    padding: 75px 8%;
+
+    background: var(--negro);
+}
+
+/* Sin degradado por defecto */
+
+.seccion::before {
+    content: none;
+}
+
+/* Degradado rojo */
+
+.seccion.con-degradado::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: -40px;
+
+    background: radial-gradient(
+        ellipse at 20% 50%,
+        rgba(227, 3, 19, 0.75) 0%,
+        rgba(227, 3, 19, 0.35) 35%,
+        rgba(227, 3, 19, 0.10) 55%,
+        transparent 75%
+    );
+
+    filter: blur(35px);
+    pointer-events: none;
+}
+
+/* Variante con degradado a la derecha */
+
+.seccion.con-degradado.degradado-derecha::before {
+    background: radial-gradient(
+        ellipse at 80% 50%,
+        rgba(227, 3, 19, 0.75) 0%,
+        rgba(227, 3, 19, 0.35) 35%,
+        rgba(227, 3, 19, 0.10) 55%,
+        transparent 75%
+    );
+}
+
+/* Encabezados */
+
+.encabezado {
+    display: block;
+    min-width: 0;
+}
+
+.indice {
+    display: block;
+    margin-bottom: 15px;
+
+    color: var(--blanco);
+    font-family: 'Morvi', sans-serif;
+    font-size: 34px;
+}
+
+.encabezado h2 {
+    font-size: clamp(28px, 4vw, 54px);
+    line-height: 1.1;
+    overflow-wrap: break-word;
+}
+
+/* Título izquierda, texto derecha */
+
+.texto-derecha .encabezado {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.texto-derecha .texto {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* Texto izquierda, título derecha */
+
+.texto-izquierda .encabezado {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.texto-izquierda .texto {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Párrafos generales */
+
+.texto {
+    width: 100%;
+    min-width: 0;
+
+    color: var(--blanco);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.texto p + p {
+    margin-top: 18px;
+}
+
+/* Cómo funciona: texto izquierda, imagen derecha */
+
+.texto-izquierda-2 .texto {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.texto-izquierda-2 .texto h2 {
+    font-size: clamp(28px, 4vw, 54px);
+    margin-bottom: 25px;
+}
+
+.funcionamiento {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+}
+
+.funcionamiento img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* SECCIÓN CÓMO FUNCIONA */
+
+.seccion-funcionamiento {
+    width: 100%;
+    padding: 40px 8% 100px;
+    background: var(--negro);
+}
+
+/* Título centrado */
+
+.funcionamiento-titulo {
+    max-width: 1000px;
+    margin: 0 auto 65px;
+
+    color: var(--blanco);
+    font-family: 'Morvi', sans-serif;
+    font-size: clamp(35px, 5vw, 70px);
+    font-weight: 400;
+    line-height: 1.1;
+
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Texto a la izquierda e imagen a la derecha */
+
+.funcionamiento-contenido {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 50px;
+}
+
+/* Texto */
+
+.funcionamiento-contenido .texto {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* Imagen */
+
+.funcionamiento-contenido .funcionamiento {
+    width: 100%;
+    min-width: 0;
+}
+
+.funcionamiento-contenido .funcionamiento img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* ESPACIADO DE LA SECCIÓN QUÉ ES IMAGE FULGURATOR */
+
+.seccion.texto-derecha:has(.nombre-interactivo) {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+
+/* 6. VENTANA EMERGENTE: JULIUS VON BISMARCK */
+
+/* Nombre interactivo */
 
 .nombre-interactivo {
     display: inline;
     padding: 0;
     border: none;
+
     background: transparent;
     color: var(--blanco);
 
@@ -317,6 +565,7 @@ figure img {
     line-height: inherit;
 
     cursor: pointer;
+
     text-decoration: underline;
     text-decoration-color: var(--rojo);
     text-underline-offset: 4px;
@@ -333,8 +582,7 @@ figure img {
     outline-offset: 4px;
 }
 
-
-/* Fondo oscuro detrás del cuadro */
+/* Fondo oscuro */
 
 .modal-fondo {
     position: fixed;
@@ -355,8 +603,7 @@ figure img {
     display: none;
 }
 
-
-/* Cuadro principal */
+/* Cuadro */
 
 .modal-cuadro {
     position: relative;
@@ -370,45 +617,30 @@ figure img {
     padding: 55px 45px 45px;
 
     background: var(--negro);
+
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 18px;
 
     box-shadow: 0 0 70px rgba(227, 3, 19, 0.2);
 }
 
-
-/* Título del cuadro */
-
 .modal-cuadro h2 {
     margin-bottom: 30px;
     padding-right: 30px;
 
-    color: var(--blanco);
-
-    font-family: 'Morvi', sans-serif;
     font-size: clamp(30px, 4vw, 48px);
-    font-weight: 400;
-    line-height: 1.1;
-    text-transform: uppercase;
 }
 
-
-/* Texto de la biografía */
-
 .modal-texto {
-    font-family: 'Astra', sans-serif;
     font-size: 17px;
-    font-weight: 300;
     line-height: 1.7;
-    color: var(--blanco);
 }
 
 .modal-texto p + p {
     margin-top: 22px;
 }
 
-
-/* Botón para cerrar */
+/* Botón cerrar */
 
 .modal-cerrar {
     position: absolute;
@@ -424,11 +656,11 @@ figure img {
 
     padding: 0;
     border: none;
-    background: transparent;
 
+    background: transparent;
     color: var(--blanco);
+
     font-size: 32px;
-    font-weight: 300;
     line-height: 1;
 
     cursor: pointer;
@@ -439,19 +671,16 @@ figure img {
     color: var(--rojo);
 }
 
-
-/* Evitar desplazamiento mientras el cuadro está abierto */
-
 body.modal-abierto {
     overflow: hidden;
 }
 
 
-/* 6. GALERÍA DE IMÁGENES */
+/* 7. GALERÍA DE IMÁGENES */
 
 .galeria {
     width: 100%;
-    padding: 0 8% 30px;
+    padding: 0 8% 10px;
     background: var(--negro);
 }
 
@@ -469,9 +698,10 @@ body.modal-abierto {
 .galeria-imagen {
     flex: 0 0 calc((100% - 20px) / 2);
     min-width: 0;
-    aspect-ratio: 4 / 3;
 
+    aspect-ratio: 4 / 3;
     overflow: hidden;
+
     border-radius: 18px;
     border: 1px solid rgba(255, 255, 255, 0.15);
 
@@ -485,11 +715,12 @@ body.modal-abierto {
     object-fit: cover;
 }
 
-/* Botones de navegación */
+/* Botones */
 
 .galeria-controles {
     display: flex;
     justify-content: flex-end;
+
     gap: 12px;
     margin-top: 25px;
 }
@@ -528,175 +759,36 @@ body.modal-abierto {
 }
 
 
-/* 7. SECCIONES Y DIFUMINADO */
-
-.seccion {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    align-items: center;
-    gap: 50px;
-
-    width: 100%;
-    padding: 75px 8%;
-
-    background: var(--negro);
-}
-
-/* Todas las secciones sin difuminado por defecto */
-
-.seccion::before {
-    content: none;
-}
-
-/* Difuminado rojo */
-
-.seccion.con-degradado::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    inset: -40px;
-
-    background: radial-gradient(
-        ellipse at 20% 50%,
-        rgba(227, 3, 19, 0.75) 0%,
-        rgba(227, 3, 19, 0.35) 35%,
-        rgba(227, 3, 19, 0.10) 55%,
-        transparent 75%
-    );
-
-    filter: blur(35px);
-    pointer-events: none;
-}
-
-/* Difuminado hacia la derecha */
-
-.seccion.con-degradado.degradado-derecha::before {
-    background: radial-gradient(
-        ellipse at 80% 50%,
-        rgba(227, 3, 19, 0.75) 0%,
-        rgba(227, 3, 19, 0.35) 35%,
-        rgba(227, 3, 19, 0.10) 55%,
-        transparent 75%
-    );
-}
-
-
-/* 8. TÍTULOS Y NÚMEROS */
-
-.encabezado {
-    display: block;
-    min-width: 0;
-    margin-bottom: 0;
-}
-
-.indice {
-    display: block;
-    margin-bottom: 15px;
-    color: var(--blanco);
-    font-family: 'Morvi', sans-serif;
-    font-size: 34px;
-    font-weight: 400;
-}
-
-.encabezado h2 {
-    color: var(--blanco);
-    font-size: clamp(28px, 4vw, 54px);
-    line-height: 1.1;
-    overflow-wrap: break-word;
-}
-
-
-/* 7. DISTRIBUCIÓN ALTERNADA */
-
-/* Título a la izquierda y texto a la derecha */
-
-.texto-derecha .encabezado {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.texto-derecha .texto {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-/* Texto a la izquierda y título a la derecha */
-
-.texto-izquierda .encabezado {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.texto-izquierda .texto {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-
-/* 9. PÁRRAFOS */
-
-.texto {
-    width: 100%;
-    min-width: 0;
-    margin: 0;
-    color: var(--blanco);
-    font-size: 17px;
-    line-height: 1.7;
-}
-
-.texto p + p {
-    margin-top: 18px;
-}
-
-/* Palabras destacadas en blanco */
-
-.negrita {
-    font-weight: 700;
-}
-
-/* Palabras destacadas en rojo */
-
-.destacado {
-    color: var(--rojo);
-    font-weight: 700;
-}
-
-
-/* 10. TARJETAS INTERACTIVAS: PROBLEMÁTICAS */
+/* 8. TARJETAS INTERACTIVAS: PROBLEMÁTICAS */
 
 .problematicas {
     width: 100%;
     padding: 100px 8%;
-
     background: var(--negro);
 }
 
+/* Títulos centrales compartidos */
 
-/* Título central */
-
-.problematicas-titulo {
+.problematicas-titulo,
+.titulo-central h2 {
     max-width: 1000px;
     margin: 0 auto 65px;
 
     color: var(--blanco);
     font-family: 'Morvi', sans-serif;
+
     font-size: clamp(35px, 5vw, 70px);
-    font-weight: 400;
     line-height: 1.1;
 
     text-align: center;
     text-transform: uppercase;
 }
 
-
-/* Contenedor de las cuatro tarjetas */
+/* Contenedor de tarjetas */
 
 .problematicas-tarjetas {
     display: flex;
+
     width: 100%;
     height: 300px;
 
@@ -706,8 +798,7 @@ body.modal-abierto {
     border-radius: 20px;
 }
 
-
-/* Estilo general de las tarjetas */
+/* Tarjeta general */
 
 .problematica-tarjeta {
     position: relative;
@@ -732,39 +823,50 @@ body.modal-abierto {
         padding 0.6s ease;
 }
 
-
-/* Tarjeta seleccionada */
+/* Tarjeta abierta */
 
 .problematica-tarjeta.activa {
     flex: 4;
     padding: 25px;
 }
 
+/* Degradados suaves de las tarjetas */
 
-/* Degradados de las tarjetas */
+/* Tarjetas rojas: 01 y 03 */
 
 .tarjeta-roja {
-    background: linear-gradient(
-        145deg,
-        #E30313 0%,
-        #A80210 55%,
-        #090909 100%
-    );
+    background:
+        radial-gradient(
+            ellipse at 20% 15%,
+            rgba(227, 3, 19, 0.38) 0%,
+            rgba(227, 3, 19, 0.18) 40%,
+            rgba(227, 3, 19, 0.05) 65%,
+            transparent 85%
+        ),
+        var(--negro);
 
     color: var(--blanco);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
+
+/* Tarjetas blancas: 02 y 04 */
 
 .tarjeta-blanca {
-    background: linear-gradient(
-        145deg,
-        #FFFFFF 0%,
-        #E8E8E8 55%,
-        #A0A0A0 100%
-    );
+    background:
+        radial-gradient(
+            ellipse at 20% 15%,
+            rgba(255, 255, 255, 0.18) 0%,
+            rgba(255, 255, 255, 0.08) 40%,
+            rgba(255, 255, 255, 0.02) 65%,
+            transparent 85%
+        ),
+        var(--negro);
 
-    color: var(--negro);
+    color: var(--blanco);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
-
 
 /* Número */
 
@@ -777,53 +879,41 @@ body.modal-abierto {
     line-height: 1;
 }
 
-
 /* Título */
 
 .problematica-tarjeta h3 {
     width: 100%;
-    margin: 0;
 
-    font-family: 'Morvi', sans-serif;
     font-size: clamp(19px, 2vw, 29px);
-    font-weight: 400;
     line-height: 1.1;
-    text-transform: uppercase;
 
-    overflow-wrap: normal;
+    overflow-wrap: anywhere;
 }
 
-.tarjeta-roja h3 {
+.tarjeta-roja h3,
+.tarjeta-blanca h3 {
     color: var(--blanco);
 }
 
-.tarjeta-blanca h3 {
-    color: var(--negro);
-}
-
-/* Títulos de tarjetas contraídas */
+/* Títulos contraídos */
 
 .problematica-tarjeta:not(.activa) h3 {
     font-size: clamp(16px, 1.6vw, 23px);
 }
 
-/* Título de tarjeta expandida */
+/* Título expandido */
 
 .problematica-tarjeta.activa h3 {
     font-size: clamp(21px, 2vw, 29px);
 }
-
 
 /* Descripción */
 
 .problematica-tarjeta p {
     max-width: 480px;
     margin-top: 20px;
-    padding-top: 0;
 
-    font-family: 'Astra', sans-serif;
     font-size: 17px;
-    font-weight: 300;
     line-height: 1.5;
 
     opacity: 0;
@@ -832,15 +922,11 @@ body.modal-abierto {
     transition: opacity 0.3s ease;
 }
 
-
-/* Mostrar descripción de la tarjeta seleccionada */
-
 .problematica-tarjeta.activa p {
     opacity: 1;
     visibility: visible;
     transition-delay: 0.25s;
 }
-
 
 /* Texto inferior */
 
@@ -849,14 +935,11 @@ body.modal-abierto {
     margin: 55px auto 0;
 
     color: var(--blanco);
-    font-family: 'Astra', sans-serif;
     font-size: 17px;
-    font-weight: 300;
     line-height: 1.7;
 
     text-align: center;
 }
-
 
 /* Accesibilidad */
 
@@ -866,13 +949,25 @@ body.modal-abierto {
 }
 
 
-/* 11. REFERENCIAS */
+/* 9. PRINCIPIOS DE LEV MANOVICH */
+
+.titulo-central {
+    width: 100%;
+    padding: 70px 8% 0;
+    text-align: center;
+}
+
+.titulo-central h2 {
+    margin-bottom: 0;
+}
+
+
+/* 10. REFERENCIAS */
 
 .referencias {
     width: 100%;
     padding: 45px 8%;
     background: var(--negro);
-    border-top: none;
 }
 
 .referencias h2 {
@@ -881,13 +976,22 @@ body.modal-abierto {
 
 .referencias p {
     margin-top: 12px;
+
     color: var(--blanco);
     font-size: 12px;
+
     overflow-wrap: anywhere;
 }
 
-a {
-    color: var(--rojo);
+
+/* 11. DISEÑO PARA TABLETS */
+
+@media (min-width: 651px) and (max-width: 1100px) {
+
+    .cuadros-interactivos-2 .cuadro {
+        flex: 0 1 calc((100% - 25px) / 2);
+    }
+
 }
 
 
@@ -895,10 +999,7 @@ a {
 
 @media (max-width: 650px) {
 
-    .contenedor {
-        width: 100%;
-        max-width: none;
-    }
+    /* Portada */
 
     .portada {
         padding: 40px 15px 10px;
@@ -917,14 +1018,7 @@ a {
         overflow-wrap: anywhere;
     }
 
-    figure {
-        margin: 0;
-    }
-
-    figure img {
-        width: 100%;
-        height: auto;
-    }
+    /* Introducción */
 
     .introduccion-central {
         min-height: auto;
@@ -933,8 +1027,9 @@ a {
 
     .introduccion-central p {
         font-size: 22px;
-        line-height: 1.5;
     }
+
+    /* Cuadros interactivos */
 
     .cuadros-interactivos {
         grid-template-columns: 1fr;
@@ -942,17 +1037,28 @@ a {
         padding: 20px 25px 30px;
     }
 
+    .cuadros-interactivos-2 {
+        gap: 20px;
+        padding: 20px 25px 30px;
+    }
+
+    .cuadros-interactivos-2 .cuadro {
+        flex: 0 0 100%;
+    }
+
     .cuadro summary {
         min-height: 190px;
         padding: 22px;
     }
 
-    .cuadro-numero {
+    .cuadro-numero,
+    .cuadros-interactivos-2 .cuadro-numero {
         font-size: 32px;
         margin-bottom: 20px;
     }
 
-    .cuadro h3 {
+    .cuadro h3,
+    .cuadros-interactivos-2 .cuadro h3 {
         font-size: 24px;
     }
 
@@ -964,7 +1070,7 @@ a {
         font-size: 14px;
     }
 
-    /* Ventana emergente*/
+    /* Ventana emergente */
 
     .modal-fondo {
         padding: 20px;
@@ -990,13 +1096,114 @@ a {
         right: 15px;
     }
 
+    /* Galería */
+
+    .galeria {
+        padding: 0 25px 10px;
+    }
+
+    .galeria-imagen {
+        flex: 0 0 100%;
+        aspect-ratio: 4 / 3;
+        border-radius: 15px;
+    }
+
+    .galeria-pista {
+        gap: 15px;
+    }
+
+    .galeria-controles {
+        margin-top: 20px;
+    }
+
+    .galeria-boton {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Secciones alternadas */
+
+    .seccion {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+        padding: 50px 25px;
+    }
+
+    .texto-derecha .encabezado,
+    .texto-izquierda .encabezado {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .texto-derecha .texto,
+    .texto-izquierda .texto {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    /* Espaciado de Qué es Image Fulgurator en celulares */
+
+    .seccion.texto-derecha:has(.nombre-interactivo) {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    /* Cómo funciona */
+
+    .texto-izquierda-2 .texto {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .funcionamiento {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .seccion-funcionamiento {
+        padding: 35px 25px 70px;
+    }
+
+    .funcionamiento-titulo {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+
+    .funcionamiento-contenido {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .funcionamiento-contenido .texto {
+        font-size: 17px;
+    }
+
+    .funcionamiento-contenido .funcionamiento img {
+        width: 100%;
+        height: auto;
+    }
+
+    .encabezado h2,
+    .texto-izquierda-2 .texto h2 {
+        font-size: clamp(28px, 8vw, 42px);
+    }
+
+    .indice {
+        font-size: 28px;
+    }
+
+    .texto {
+        font-size: 17px;
+    }
+
     /* Problemáticas */
 
     .problematicas {
         padding: 70px 25px;
     }
 
-    .problematicas-titulo {
+    .problematicas-titulo,
+    .titulo-central h2 {
         font-size: 36px;
         margin-bottom: 40px;
     }
@@ -1025,14 +1232,14 @@ a {
         margin-bottom: 10px;
     }
 
-    .problematica-tarjeta h3 {
+    .problematica-tarjeta h3,
+    .problematica-tarjeta:not(.activa) h3 {
         font-size: 21px;
-        line-height: 1.1;
     }
 
     .problematica-tarjeta p {
         font-size: 15px;
-        padding-top: 15px;
+        margin-top: 15px;
     }
 
     .problematicas-descripcion {
@@ -1040,278 +1247,28 @@ a {
         font-size: 16px;
     }
 
-    .galeria {
-        padding: 0 25px 20px;
+    /* Lev Manovich */
+
+    .titulo-central {
+        padding: 60px 25px 0;
     }
 
-    .galeria-imagen {
-        flex: 0 0 100%;
-        aspect-ratio: 4 / 3;
-        border-radius: 15px;
-    }
-
-    .galeria-pista {
-        gap: 15px;
-    }
-
-    .galeria-controles {
-        margin-top: 20px;
-    }
-
-    .galeria-boton {
-        width: 40px;
-        height: 40px;
-    }
-
-    .seccion {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 25px;
-        padding: 50px 25px;
-    }
-
-    /* En móviles, todos los temas se apilan */
-
-    .texto-derecha .encabezado,
-    .texto-izquierda .encabezado {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .texto-derecha .texto,
-    .texto-izquierda .texto {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .encabezado h2 {
-        font-size: clamp(28px, 8vw, 42px);
-    }
-
-    .indice {
-        font-size: 28px;
-    }
-
-    .texto {
-        font-size: 17px;
-    }
+    /* Referencias */
 
     .referencias {
         padding: 35px 25px;
     }
+
 }
 
 
-/* ---------- */
+/* 13. REDUCIR ANIMACIONES SI EL USUARIO LO PREFIERE */
 
-.funcionamiento img {
-    width: 100%;
-    display: block;
-    object-fit: cover;
-}
+@media (prefers-reduced-motion: reduce) {
 
-/* Texto a la izquierda y título a la derecha */
+    .galeria-pista,
+    .problematica-tarjeta {
+        transition: none;
+    }
 
-.texto-izquierda-2 {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.texto-izquierda-2 .texto h2{
-    font-size: clamp(28px, 8vw, 42px);
-    
-}
-
-
-/* . CUADROS INTERACTIVOS LEV MANOVICH*/
-
-.cuadros-interactivos-2 {
-    width: 100%;
-    padding: 30px 8% 35px;
-
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 25px;
-
-    background: var(--negro);
-    align-items: start;
-}
-
-.cuadro {
-    position: relative;
-    overflow: hidden;
-    isolation: isolate;
-
-    min-width: 0;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 18px;
-
-    background: var(--negro);
-    color: var(--blanco);
-
-    transition: border-color 0.3s ease;
-}
-
-/* Degradado rojo dentro de cada cuadro */
-
-.cuadro::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-
-    background: radial-gradient(
-        ellipse at 25% 15%,
-        rgba(227, 3, 19, 0.55) 0%,
-        rgba(227, 3, 19, 0.22) 40%,
-        transparent 80%
-    );
-
-    pointer-events: none;
-}
-
-.cuadro:nth-child(2)::before {
-    background: radial-gradient(
-        ellipse at 75% 15%,
-        rgba(227, 3, 19, 0.55) 0%,
-        rgba(227, 3, 19, 0.22) 40%,
-        transparent 80%
-    );
-}
-
-/* Parte visible del cuadro */
-
-.cuadro summary {
-    position: relative;
-    min-height: 230px;
-    padding: 25px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    cursor: pointer;
-    list-style: none;
-}
-
-.cuadro summary::-webkit-details-marker {
-    display: none;
-}
-
-/* Número */
-
-.cuadro-numero {
-    display: block;
-    margin-bottom: 25px;
-
-    font-family: 'Morvi', sans-serif;
-    font-size: 38px;
-    line-height: 1;
-}
-
-/* Título */
-
-.cuadro h3 {
-    max-width: 95%;
-
-    font-family: 'Morvi', sans-serif;
-    font-size: clamp(20px, 2vw, 30px);
-    font-weight: 400;
-    line-height: 1.15;
-    text-transform: uppercase;
-}
-
-/* Símbolo para abrir y cerrar */
-
-.cuadro-icono {
-    position: absolute;
-    right: 25px;
-    bottom: 22px;
-
-    width: 18px;
-    height: 18px;
-}
-
-.cuadro-icono::before,
-.cuadro-icono::after {
-    content: "";
-    position: absolute;
-
-    top: 50%;
-    left: 50%;
-
-    background: var(--blanco);
-    transform: translate(-50%, -50%);
-}
-
-.cuadro-icono::before {
-    width: 18px;
-    height: 2px;
-}
-
-.cuadro-icono::after {
-    width: 2px;
-    height: 18px;
-
-    transition: opacity 0.2s ease;
-}
-
-/* Cuando el cuadro está abierto */
-
-.cuadro[open] {
-    border-color: var(--rojo);
-}
-
-.cuadro[open] .cuadro-icono::after {
-    opacity: 0;
-}
-
-/* Texto desplegable */
-
-.cuadro-contenido {
-    padding: 0 25px 30px;
-}
-
-.cuadro-contenido p {
-    max-width: 100%;
-    color: var(--blanco);
-    font-family: 'Astra', sans-serif;
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 1.6;
-}
-
-.cuadro-contenido p + p {
-    margin-top: 20px;
-}
-
-
-/* . TITULO CENTRAL */
-
-.titulo-central {
-    max-width: 1000px;
-    margin: 0 auto 65px;
-
-    color: var(--blanco);
-    font-family: 'Morvi', sans-serif;
-    font-size: clamp(35px, 5vw, 70px);
-    font-weight: 400;
-    line-height: 1.1;
-
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.titulo-central p {
-    max-width: 850px;
-    margin: 0 auto;
-
-    color: var(--blanco);
-    font-family: 'Astra', sans-serif;
-    font-size: clamp(18px, 2vw, 28px);
-    font-weight: 300;
-    line-height: 1.5;
-}
-
-.titulo-central .negrita {
-    font-weight: 700;
 }
