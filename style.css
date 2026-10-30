@@ -72,12 +72,74 @@ a {
 }
 
 
+/* MENÚ DE NAVEGACIÓN SUPERIOR */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.menu-navegacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    width: 100%;
+    margin: 0 auto 65px;
+}
+
+/* PALABRAS DEL MENÚ */
+
+.menu-navegacion a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 9px 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 25px;
+
+    background: transparent;
+    color: var(--blanco);
+
+    font-family: 'Astra', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+
+    text-decoration: none;
+    letter-spacing: 0.3px;
+
+    transition:
+        border-color 0.3s ease,
+        color 0.3s ease,
+        background 0.3s ease;
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+
+.menu-navegacion a:hover {
+    border-color: var(--rojo);
+    background: rgba(227, 3, 19, 0.12);
+    color: var(--blanco);
+}
+
+/* ACCESIBILIDAD CON TECLADO */
+
+.menu-navegacion a:focus-visible {
+    outline: 2px solid var(--rojo);
+    outline-offset: 4px;
+}
+
+
 /* 2. PORTADA E IMAGEN PRINCIPAL */
 
 .portada {
     background: var(--negro);
     text-align: center;
-    padding: 60px 20px 0;
+    padding: 35px 20px 0;
 }
 
 .numero {
@@ -1402,6 +1464,19 @@ body.modal-abierto {
 
     .figura-portada .glosa {
         padding: 0 25px;
+    }
+
+    /* Menú de navegación */
+
+    .menu-navegacion {
+        gap: 10px;
+        margin-bottom: 45px;
+    }
+
+    .menu-navegacion a {
+        padding: 8px 14px;
+        font-size: 11px;
+        border-radius: 20px;
     }
 
 }
