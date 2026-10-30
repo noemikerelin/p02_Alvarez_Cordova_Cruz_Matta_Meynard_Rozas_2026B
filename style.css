@@ -115,6 +115,10 @@ figure img {
     display: block;
 }
 
+.figura-portada {
+    margin-bottom: 30px;
+}
+
 
 /* 3. INTRODUCCIÓN CENTRAL */
 
@@ -489,7 +493,7 @@ figure img {
 
 .seccion-funcionamiento {
     width: 100%;
-    padding: 40px 8% 100px;
+    padding: 40px 8% 40px;
     background: var(--negro);
 }
 
@@ -759,7 +763,28 @@ body.modal-abierto {
 }
 
 
-/* 8. TARJETAS INTERACTIVAS: PROBLEMÁTICAS */
+/* 8. CÓMO FUNCIONA */
+
+/* DIAGRAMA DE FUNCIONAMIENTO */
+
+.diagrama-funcionamiento {
+    width: 84%;
+    max-width: 1400px;
+
+    margin: 0 auto 70px;
+    padding: 0;
+
+    background: var(--negro);
+}
+
+.diagrama-funcionamiento img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* 9. TARJETAS INTERACTIVAS: PROBLEMÁTICAS */
 
 .problematicas {
     width: 100%;
@@ -949,7 +974,7 @@ body.modal-abierto {
 }
 
 
-/* 9. PRINCIPIOS DE LEV MANOVICH */
+/* 10. PRINCIPIOS DE LEV MANOVICH */
 
 .titulo-central {
     width: 100%;
@@ -962,23 +987,39 @@ body.modal-abierto {
 }
 
 
-/* 10. REFERENCIAS */
+/* 11. REFERENCIAS */
 
 .referencias {
+    position: relative;
     width: 100%;
-    padding: 70px 8% 90px;
+    padding: 90px 8% 100px;
+    margin-top: 60px;
     background: var(--negro);
+}
+
+/* Línea divisoria superior */
+
+.referencias::before {
+    content: "";
+    position: absolute;
+    top: 45px;
+    left: 8%;
+    right: 8%;
+
+    height: 1px;
+    background: rgba(255, 255, 255, 0.5);
 }
 
 /* Título */
 
 .referencias h2 {
-    margin-bottom: 35px;
+    margin: 0 0 40px;
 
     color: var(--blanco);
     font-family: 'Morvi', sans-serif;
     font-size: clamp(30px, 4vw, 48px);
     font-weight: 400;
+    line-height: 1.1;
     text-transform: uppercase;
 }
 
@@ -986,7 +1027,7 @@ body.modal-abierto {
 
 .referencias p {
     max-width: 1000px;
-    margin-top: 20px;
+    margin: 0 0 25px;
 
     color: var(--blanco);
     font-family: 'Astra', sans-serif;
@@ -1002,7 +1043,7 @@ body.modal-abierto {
 .referencias a {
     color: var(--rojo);
     text-decoration: none;
-    transition: color 0.3s ease;
+    overflow-wrap: anywhere;
 }
 
 .referencias a:hover {
@@ -1011,7 +1052,52 @@ body.modal-abierto {
 }
 
 
-/* 11. DISEÑO PARA TABLETS */
+/* GLOSAS DE LAS FIGURAS */
+
+.glosa {
+    margin-top: 12px;
+
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Astra', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+/* Número de figura en negrita */
+
+.glosa strong {
+    color: var(--blanco);
+    font-weight: 700;
+}
+
+/* Glosa de la portada */
+
+.figura-portada .glosa {
+    padding: 0 8%;
+}
+
+/* Glosa de la cámara */
+
+.figura-camara .glosa {
+    padding: 0;
+}
+
+/* Glosa del diagrama */
+
+.figura-diagrama {
+    width: 100%;
+    margin: 0;
+}
+
+.figura-diagrama .glosa {
+    padding: 0;
+}
+
+
+/* 12. DISEÑO PARA TABLETS */
 
 @media (min-width: 651px) and (max-width: 1100px) {
 
@@ -1022,7 +1108,7 @@ body.modal-abierto {
 }
 
 
-/* 12. DISEÑO PARA CELULARES */
+/* 13. DISEÑO PARA CELULARES */
 
 @media (max-width: 650px) {
 
@@ -1188,7 +1274,7 @@ body.modal-abierto {
     }
 
     .seccion-funcionamiento {
-        padding: 35px 25px 70px;
+        padding: 35px 25px 30px;
     }
 
     .funcionamiento-titulo {
@@ -1208,6 +1294,12 @@ body.modal-abierto {
     .funcionamiento-contenido .funcionamiento img {
         width: 100%;
         height: auto;
+    }
+
+    .diagrama-funcionamiento {
+        width: calc(100% - 50px);
+        max-width: none;
+        margin: 0 auto 45px;
     }
 
     .encabezado h2,
@@ -1283,21 +1375,39 @@ body.modal-abierto {
     /* Referencias */
 
     .referencias {
-        padding: 50px 25px 70px;
+        padding: 65px 25px 75px;
+    }
+
+    .referencias::before {
+        left: 25px;
+        right: 25px;
     }
 
     .referencias h2 {
         font-size: 32px;
-        margin-bottom: 25px;
+        margin-bottom: 30px;
     }
 
     .referencias p {
         font-size: 14px;
-        margin-top: 18px;
+        margin-bottom: 22px;
     }
 
+    /* Glosas */
 
-/* 13. REDUCIR ANIMACIONES SI EL USUARIO LO PREFIERE */
+    .glosa {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    .figura-portada .glosa {
+        padding: 0 25px;
+    }
+
+}
+
+
+/* 14. REDUCIR ANIMACIONES SI EL USUARIO LO PREFIERE */
 
 @media (prefers-reduced-motion: reduce) {
 
