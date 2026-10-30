@@ -1,3 +1,4 @@
+
 /* 1. TIPOGRAFÍAS, COLORES Y CONFIGURACIÓN */
 
 @font-face {
@@ -35,6 +36,10 @@
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: var(--negro);
     color: var(--blanco);
@@ -62,21 +67,12 @@ h3 {
     font-weight: 700;
 }
 
-.destacado {
-    color: var(--rojo);
-    font-weight: 700;
-}
-
 a {
     color: var(--rojo);
 }
 
 
-/* MENÚ DE NAVEGACIÓN SUPERIOR */
-
-html {
-    scroll-behavior: smooth;
-}
+/* 2. MENÚ DE NAVEGACIÓN SUPERIOR */
 
 .menu-navegacion {
     display: flex;
@@ -90,7 +86,7 @@ html {
     margin: 0 auto 65px;
 }
 
-/* PALABRAS DEL MENÚ */
+/* Botones del menú */
 
 .menu-navegacion a {
     display: inline-flex;
@@ -118,7 +114,7 @@ html {
         background 0.3s ease;
 }
 
-/* EFECTO AL PASAR EL CURSOR */
+/* Efecto al pasar el cursor */
 
 .menu-navegacion a:hover {
     border-color: var(--rojo);
@@ -126,7 +122,7 @@ html {
     color: var(--blanco);
 }
 
-/* ACCESIBILIDAD CON TECLADO */
+/* Accesibilidad con teclado */
 
 .menu-navegacion a:focus-visible {
     outline: 2px solid var(--rojo);
@@ -134,7 +130,7 @@ html {
 }
 
 
-/* 2. PORTADA E IMAGEN PRINCIPAL */
+/* 3. PORTADA E IMAGEN PRINCIPAL */
 
 .portada {
     background: var(--negro);
@@ -145,6 +141,7 @@ html {
 .numero {
     width: 100%;
     margin: 0 auto 35px;
+
     color: var(--blanco);
     font-size: clamp(8px, 0.85vw, 13px);
     letter-spacing: 1px;
@@ -156,6 +153,7 @@ html {
 
 h1 {
     width: 100%;
+
     font-size: clamp(55px, 12vw, 180px);
     text-align: center;
     line-height: 0.8;
@@ -182,7 +180,7 @@ figure img {
 }
 
 
-/* 3. INTRODUCCIÓN CENTRAL */
+/* 4. INTRODUCCIÓN CENTRAL */
 
 .introduccion-central {
     width: 100%;
@@ -200,6 +198,7 @@ figure img {
 .introduccion-central p {
     max-width: 850px;
     margin: 0 auto;
+
     color: var(--blanco);
     font-size: clamp(18px, 2vw, 28px);
     font-weight: 300;
@@ -207,15 +206,13 @@ figure img {
 }
 
 
-/* 4. CUADROS INTERACTIVOS */
+/* 5. CUADROS INTERACTIVOS */
 /* Estilos compartidos por Video Mapping y Lev Manovich */
 
 .cuadros-interactivos,
 .cuadros-interactivos-2 {
     width: 100%;
     padding: 30px 8% 35px;
-
-    display: grid;
     gap: 25px;
 
     background: var(--negro);
@@ -225,34 +222,30 @@ figure img {
 /* Dos cuadros de Video Mapping */
 
 .cuadros-interactivos {
+    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 /* Cinco cuadros de Lev Manovich */
+/* Apoyo de ChatGPT: distribución en dos filas con cuadros centrados. */
 
 .cuadros-interactivos-2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
-    gap: 25px;
-    padding: 30px 8% 35px;
 }
-
-/* Tamaño de cada cuadro */
 
 .cuadros-interactivos-2 .cuadro {
     flex: 0 1 calc((100% - 50px) / 3);
     min-width: 0;
 }
 
-/* Estilo general */
+/* Estilo general de los cuadros */
 
 .cuadro {
     position: relative;
     overflow: hidden;
     isolation: isolate;
-
     min-width: 0;
 
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -264,7 +257,7 @@ figure img {
     transition: border-color 0.3s ease;
 }
 
-/* Degradado interior */
+/* Apoyo de ChatGPT: degradado radial dentro de los cuadros desplegables. */
 
 .cuadro::before {
     content: "";
@@ -295,7 +288,6 @@ figure img {
 
 .cuadro summary {
     position: relative;
-
     min-height: 230px;
     padding: 25px;
 
@@ -326,14 +318,12 @@ figure img {
 
 .cuadro h3 {
     max-width: 95%;
-
     font-size: clamp(20px, 2vw, 30px);
     line-height: 1.15;
-
     overflow-wrap: anywhere;
 }
 
-/* Icono de abrir y cerrar */
+/* Icono para abrir y cerrar */
 
 .cuadro-icono {
     position: absolute;
@@ -364,7 +354,6 @@ figure img {
 .cuadro-icono::after {
     width: 2px;
     height: 18px;
-
     transition: opacity 0.2s ease;
 }
 
@@ -387,7 +376,6 @@ figure img {
 .cuadro-contenido p {
     max-width: 100%;
     color: var(--blanco);
-
     font-size: 15px;
     line-height: 1.6;
 }
@@ -396,7 +384,7 @@ figure img {
     margin-top: 20px;
 }
 
-/* Ajustes exclusivos de los cinco cuadros */
+/* Tamaños exclusivos de los cinco cuadros de Lev Manovich */
 
 .cuadros-interactivos-2 .cuadro h3 {
     font-size: clamp(20px, 2vw, 28px);
@@ -409,7 +397,7 @@ figure img {
 }
 
 
-/* 5. SECCIONES ALTERNADAS Y DEGRADADOS */
+/* 6. SECCIONES ALTERNADAS Y DEGRADADOS */
 
 .seccion {
     position: relative;
@@ -423,7 +411,6 @@ figure img {
 
     width: 100%;
     padding: 75px 8%;
-
     background: var(--negro);
 }
 
@@ -433,7 +420,7 @@ figure img {
     content: none;
 }
 
-/* Degradado rojo */
+/* Apoyo de ChatGPT: pseudo-elemento con difuminado rojo detrás del contenido. */
 
 .seccion.con-degradado::before {
     content: "";
@@ -453,32 +440,11 @@ figure img {
     pointer-events: none;
 }
 
-/* Variante con degradado a la derecha */
-
-.seccion.con-degradado.degradado-derecha::before {
-    background: radial-gradient(
-        ellipse at 80% 50%,
-        rgba(227, 3, 19, 0.75) 0%,
-        rgba(227, 3, 19, 0.35) 35%,
-        rgba(227, 3, 19, 0.10) 55%,
-        transparent 75%
-    );
-}
-
 /* Encabezados */
 
 .encabezado {
     display: block;
     min-width: 0;
-}
-
-.indice {
-    display: block;
-    margin-bottom: 15px;
-
-    color: var(--blanco);
-    font-family: 'Morvi', sans-serif;
-    font-size: 34px;
 }
 
 .encabezado h2 {
@@ -487,7 +453,7 @@ figure img {
     overflow-wrap: break-word;
 }
 
-/* Título izquierda, texto derecha */
+/* Título a la izquierda, texto a la derecha */
 
 .texto-derecha .encabezado {
     grid-column: 1;
@@ -499,24 +465,11 @@ figure img {
     grid-row: 1;
 }
 
-/* Texto izquierda, título derecha */
-
-.texto-izquierda .encabezado {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.texto-izquierda .texto {
-    grid-column: 1;
-    grid-row: 1;
-}
-
 /* Párrafos generales */
 
 .texto {
     width: 100%;
     min-width: 0;
-
     color: var(--blanco);
     font-size: 17px;
     line-height: 1.7;
@@ -526,36 +479,19 @@ figure img {
     margin-top: 18px;
 }
 
-/* Cómo funciona: texto izquierda, imagen derecha */
+/* Espaciado de la sección Qué es Image Fulgurator */
 
-.texto-izquierda-2 .texto {
-    grid-column: 1;
-    grid-row: 1;
+#que-es {
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
-.texto-izquierda-2 .texto h2 {
-    font-size: clamp(28px, 4vw, 54px);
-    margin-bottom: 25px;
-}
 
-.funcionamiento {
-    grid-column: 2;
-    grid-row: 1;
-    min-width: 0;
-}
-
-.funcionamiento img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
-}
-
-/* SECCIÓN CÓMO FUNCIONA */
+/* 7. SECCIÓN CÓMO FUNCIONA */
 
 .seccion-funcionamiento {
     width: 100%;
-    padding: 40px 8% 40px;
+    padding: 40px 8%;
     background: var(--negro);
 }
 
@@ -584,38 +520,39 @@ figure img {
     gap: 50px;
 }
 
-/* Texto */
-
-.funcionamiento-contenido .texto {
-    font-size: 17px;
-    line-height: 1.7;
-}
-
-/* Imagen */
-
-.funcionamiento-contenido .funcionamiento {
-    width: 100%;
+.funcionamiento {
     min-width: 0;
 }
 
-.funcionamiento-contenido .funcionamiento img {
+.funcionamiento img {
     width: 100%;
     height: auto;
     display: block;
     object-fit: contain;
 }
 
-/* ESPACIADO DE LA SECCIÓN QUÉ ES IMAGE FULGURATOR */
+/* Diagrama SVG */
 
-.seccion.texto-derecha:has(.nombre-interactivo) {
-    margin-top: 80px;
-    margin-bottom: 80px;
+.diagrama-funcionamiento {
+    width: 84%;
+    max-width: 1400px;
+
+    margin: 0 auto 70px;
+    padding: 0;
+
+    background: var(--negro);
+}
+
+.diagrama-funcionamiento img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 
-/* 6. VENTANA EMERGENTE: JULIUS VON BISMARCK */
+/* 8. VENTANA EMERGENTE: JULIUS VON BISMARCK */
 
-/* Nombre interactivo */
+/* Nombre interactivo dentro del párrafo */
 
 .nombre-interactivo {
     display: inline;
@@ -631,7 +568,6 @@ figure img {
     line-height: inherit;
 
     cursor: pointer;
-
     text-decoration: underline;
     text-decoration-color: var(--rojo);
     text-underline-offset: 4px;
@@ -648,7 +584,7 @@ figure img {
     outline-offset: 4px;
 }
 
-/* Fondo oscuro */
+/* Apoyo de ChatGPT: capa fija oscura y desenfocada para la biografía. */
 
 .modal-fondo {
     position: fixed;
@@ -660,7 +596,6 @@ figure img {
     align-items: center;
 
     padding: 25px;
-
     background: rgba(0, 0, 0, 0.82);
     backdrop-filter: blur(6px);
 }
@@ -669,7 +604,7 @@ figure img {
     display: none;
 }
 
-/* Cuadro */
+/* Cuadro emergente */
 
 .modal-cuadro {
     position: relative;
@@ -679,11 +614,9 @@ figure img {
     max-height: 85vh;
 
     overflow-y: auto;
-
     padding: 55px 45px 45px;
 
     background: var(--negro);
-
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 18px;
 
@@ -693,9 +626,10 @@ figure img {
 .modal-cuadro h2 {
     margin-bottom: 30px;
     padding-right: 30px;
-
     font-size: clamp(30px, 4vw, 48px);
 }
+
+/* Texto de la biografía */
 
 .modal-texto {
     font-size: 17px;
@@ -706,7 +640,7 @@ figure img {
     margin-top: 22px;
 }
 
-/* Botón cerrar */
+/* Botón para cerrar */
 
 .modal-cerrar {
     position: absolute;
@@ -719,7 +653,6 @@ figure img {
 
     width: 35px;
     height: 35px;
-
     padding: 0;
     border: none;
 
@@ -742,7 +675,7 @@ body.modal-abierto {
 }
 
 
-/* 7. GALERÍA DE IMÁGENES */
+/* 9. GALERÍA DE IMÁGENES */
 
 .galeria {
     width: 100%;
@@ -754,6 +687,8 @@ body.modal-abierto {
     width: 100%;
     overflow: hidden;
 }
+
+/* Movimiento horizontal del carrusel */
 
 .galeria-pista {
     display: flex;
@@ -770,7 +705,6 @@ body.modal-abierto {
 
     border-radius: 18px;
     border: 1px solid rgba(255, 255, 255, 0.15);
-
     background: var(--negro);
 }
 
@@ -781,12 +715,11 @@ body.modal-abierto {
     object-fit: cover;
 }
 
-/* Botones */
+/* Botones de navegación */
 
 .galeria-controles {
     display: flex;
     justify-content: flex-end;
-
     gap: 12px;
     margin-top: 25px;
 }
@@ -825,28 +758,7 @@ body.modal-abierto {
 }
 
 
-/* 8. CÓMO FUNCIONA */
-
-/* DIAGRAMA DE FUNCIONAMIENTO */
-
-.diagrama-funcionamiento {
-    width: 84%;
-    max-width: 1400px;
-
-    margin: 0 auto 70px;
-    padding: 0;
-
-    background: var(--negro);
-}
-
-.diagrama-funcionamiento img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-
-/* 9. TARJETAS INTERACTIVAS: PROBLEMÁTICAS */
+/* 10. TARJETAS INTERACTIVAS: PROBLEMÁTICAS */
 
 .problematicas {
     width: 100%;
@@ -857,35 +769,34 @@ body.modal-abierto {
 /* Títulos centrales compartidos */
 
 .problematicas-titulo,
+.funcionamiento-titulo,
 .titulo-central h2 {
     max-width: 1000px;
-    margin: 0 auto 65px;
-
-    color: var(--blanco);
-    font-family: 'Morvi', sans-serif;
-
     font-size: clamp(35px, 5vw, 70px);
     line-height: 1.1;
-
     text-align: center;
     text-transform: uppercase;
 }
 
-/* Contenedor de tarjetas */
+/* Título de problemáticas */
+
+.problematicas-titulo {
+    margin: 0 auto 65px;
+}
+
+/* Apoyo de ChatGPT: distribución horizontal expandible con animación. */
 
 .problematicas-tarjetas {
     display: flex;
-
     width: 100%;
     height: 300px;
 
     gap: 8px;
     overflow: hidden;
-
     border-radius: 20px;
 }
 
-/* Tarjeta general */
+/* Estilo general de las tarjetas */
 
 .problematica-tarjeta {
     position: relative;
@@ -902,6 +813,9 @@ body.modal-abierto {
     border-radius: 18px;
 
     text-align: left;
+    font-family: 'Astra', sans-serif;
+    font-weight: 300;
+
     cursor: pointer;
     overflow: hidden;
 
@@ -910,14 +824,20 @@ body.modal-abierto {
         padding 0.6s ease;
 }
 
-/* Tarjeta abierta */
+/* Tarjeta seleccionada */
 
 .problematica-tarjeta.activa {
     flex: 4;
     padding: 25px;
 }
 
-/* Degradados suaves de las tarjetas */
+/* El degradado y la opacidad fueron ajustados con apoyo de ChatGPT. */
+
+.tarjeta-roja,
+.tarjeta-blanca {
+    color: var(--blanco);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
 
 /* Tarjetas rojas: 01 y 03 */
 
@@ -931,10 +851,6 @@ body.modal-abierto {
             transparent 85%
         ),
         var(--negro);
-
-    color: var(--blanco);
-
-    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Tarjetas blancas: 02 y 04 */
@@ -949,10 +865,6 @@ body.modal-abierto {
             transparent 85%
         ),
         var(--negro);
-
-    color: var(--blanco);
-
-    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Número */
@@ -966,37 +878,37 @@ body.modal-abierto {
     line-height: 1;
 }
 
-/* Título */
+/* Título de cada tarjeta */
 
-.problematica-tarjeta h3 {
+.problematica-titulo-texto {
+    display: block;
     width: 100%;
+
+    font-family: 'Morvi', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
 
     font-size: clamp(19px, 2vw, 29px);
     line-height: 1.1;
-
     overflow-wrap: anywhere;
 }
 
-.tarjeta-roja h3,
-.tarjeta-blanca h3 {
-    color: var(--blanco);
-}
+/* Títulos de tarjetas contraídas */
 
-/* Títulos contraídos */
-
-.problematica-tarjeta:not(.activa) h3 {
+.problematica-tarjeta:not(.activa) .problematica-titulo-texto {
     font-size: clamp(16px, 1.6vw, 23px);
 }
 
-/* Título expandido */
+/* Título de tarjeta expandida */
 
-.problematica-tarjeta.activa h3 {
+.problematica-tarjeta.activa .problematica-titulo-texto {
     font-size: clamp(21px, 2vw, 29px);
 }
 
 /* Descripción */
 
-.problematica-tarjeta p {
+.problematica-descripcion {
+    display: block;
     max-width: 480px;
     margin-top: 20px;
 
@@ -1009,7 +921,7 @@ body.modal-abierto {
     transition: opacity 0.3s ease;
 }
 
-.problematica-tarjeta.activa p {
+.problematica-tarjeta.activa .problematica-descripcion {
     opacity: 1;
     visibility: visible;
     transition-delay: 0.25s;
@@ -1024,7 +936,6 @@ body.modal-abierto {
     color: var(--blanco);
     font-size: 17px;
     line-height: 1.7;
-
     text-align: center;
 }
 
@@ -1036,7 +947,7 @@ body.modal-abierto {
 }
 
 
-/* 10. PRINCIPIOS DE LEV MANOVICH */
+/* 11. PRINCIPIOS DE LEV MANOVICH */
 
 .titulo-central {
     width: 100%;
@@ -1045,17 +956,19 @@ body.modal-abierto {
 }
 
 .titulo-central h2 {
-    margin-bottom: 0;
+    margin: 0 auto;
 }
 
 
-/* 11. REFERENCIAS */
+/* 12. REFERENCIAS */
 
 .referencias {
     position: relative;
     width: 100%;
+
     padding: 90px 8% 100px;
     margin-top: 60px;
+
     background: var(--negro);
 }
 
@@ -1114,7 +1027,7 @@ body.modal-abierto {
 }
 
 
-/* GLOSAS DE LAS FIGURAS */
+/* 13. GLOSAS DE LAS FIGURAS */
 
 .glosa {
     margin-top: 12px;
@@ -1141,25 +1054,16 @@ body.modal-abierto {
     padding: 0 8%;
 }
 
-/* Glosa de la cámara */
-
-.figura-camara .glosa {
-    padding: 0;
-}
-
-/* Glosa del diagrama */
+/* Figura del diagrama */
 
 .figura-diagrama {
     width: 100%;
     margin: 0;
 }
 
-.figura-diagrama .glosa {
-    padding: 0;
-}
 
-
-/* 12. DISEÑO PARA TABLETS */
+/* 14. DISEÑO PARA TABLETS */
+/* Apoyo de ChatGPT: ajustes responsivos para distintas pantallas. */
 
 @media (min-width: 651px) and (max-width: 1100px) {
 
@@ -1170,7 +1074,7 @@ body.modal-abierto {
 }
 
 
-/* 13. DISEÑO PARA CELULARES */
+/* 15. DISEÑO PARA CELULARES */
 
 @media (max-width: 650px) {
 
@@ -1191,6 +1095,19 @@ body.modal-abierto {
         font-size: clamp(40px, 10vw, 65px);
         letter-spacing: -1px;
         overflow-wrap: anywhere;
+    }
+
+    /* Menú de navegación */
+
+    .menu-navegacion {
+        gap: 10px;
+        margin-bottom: 45px;
+    }
+
+    .menu-navegacion a {
+        padding: 8px 14px;
+        font-size: 11px;
+        border-radius: 20px;
     }
 
     /* Introducción */
@@ -1245,6 +1162,31 @@ body.modal-abierto {
         font-size: 14px;
     }
 
+    /* Secciones alternadas */
+
+    .seccion {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+        padding: 50px 25px;
+    }
+
+    .texto-derecha .encabezado {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .texto-derecha .texto {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    /* Espaciado de Qué es Image Fulgurator */
+
+    #que-es {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
     /* Ventana emergente */
 
     .modal-fondo {
@@ -1296,44 +1238,7 @@ body.modal-abierto {
         height: 40px;
     }
 
-    /* Secciones alternadas */
-
-    .seccion {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 25px;
-        padding: 50px 25px;
-    }
-
-    .texto-derecha .encabezado,
-    .texto-izquierda .encabezado {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .texto-derecha .texto,
-    .texto-izquierda .texto {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    /* Espaciado de Qué es Image Fulgurator en celulares */
-
-    .seccion.texto-derecha:has(.nombre-interactivo) {
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-
     /* Cómo funciona */
-
-    .texto-izquierda-2 .texto {
-        grid-column: 1;
-        grid-row: 1;
-    }
-
-    .funcionamiento {
-        grid-column: 1;
-        grid-row: 2;
-    }
 
     .seccion-funcionamiento {
         padding: 35px 25px 30px;
@@ -1349,14 +1254,7 @@ body.modal-abierto {
         gap: 30px;
     }
 
-    .funcionamiento-contenido .texto {
-        font-size: 17px;
-    }
-
-    .funcionamiento-contenido .funcionamiento img {
-        width: 100%;
-        height: auto;
-    }
+    /* Diagrama */
 
     .diagrama-funcionamiento {
         width: calc(100% - 50px);
@@ -1364,17 +1262,8 @@ body.modal-abierto {
         margin: 0 auto 45px;
     }
 
-    .encabezado h2,
-    .texto-izquierda-2 .texto h2 {
+    .encabezado h2 {
         font-size: clamp(28px, 8vw, 42px);
-    }
-
-    .indice {
-        font-size: 28px;
-    }
-
-    .texto {
-        font-size: 17px;
     }
 
     /* Problemáticas */
@@ -1413,12 +1302,12 @@ body.modal-abierto {
         margin-bottom: 10px;
     }
 
-    .problematica-tarjeta h3,
-    .problematica-tarjeta:not(.activa) h3 {
+    .problematica-titulo-texto,
+    .problematica-tarjeta:not(.activa) .problematica-titulo-texto {
         font-size: 21px;
     }
 
-    .problematica-tarjeta p {
+    .problematica-descripcion {
         font-size: 15px;
         margin-top: 15px;
     }
@@ -1466,25 +1355,16 @@ body.modal-abierto {
         padding: 0 25px;
     }
 
-    /* Menú de navegación */
-
-    .menu-navegacion {
-        gap: 10px;
-        margin-bottom: 45px;
-    }
-
-    .menu-navegacion a {
-        padding: 8px 14px;
-        font-size: 11px;
-        border-radius: 20px;
-    }
-
 }
 
 
-/* 14. REDUCIR ANIMACIONES SI EL USUARIO LO PREFIERE */
+/* 16. REDUCIR ANIMACIONES SI EL USUARIO LO PREFIERE */
 
 @media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
 
     .galeria-pista,
     .problematica-tarjeta {
